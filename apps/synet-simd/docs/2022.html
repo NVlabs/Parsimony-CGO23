@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Simd Library Release Notes (2022)</title>
+</head>
+<body> <center><table width=1024><tr><td>
+<a id="HOME"><a>
+<center>
+<img width="200" height="100" src="logo.png">
+<h1>Simd Library Release Notes (2022).</h1>
+<a href="index.html">Home</a> |
+<a href="2021.html">Release Notes</a> | 
+<a href="download.html">Download</a> | 
+<a href="help/index.html">Documentation</a> | 
+<a href="http://github.com/ermig1979/Simd/issues">Issues</a> | 
+<a href="http://github.com/ermig1979/Simd" target="_top">GitHub</a> 
+</center>
+<hr/> 
+</td></tr><tr><td>
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/>
+
+<h3 id="R111">March 3, 2022 (version 4.9.111)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>AVX2, AVX-512BW optimizations of ResizerByteBicubic class.</li>
+ <li>SSE4.1, AVX2, AVX-512BW, NEON optimizations of function Base64Decode.</li>
+ <li>NEON optimizations of function SynetSwish32f.</li>
+ <li>Swish activation function to NEON optimizations of SynetConvolution32f framework.</li>
+ <li>Swish activation function to NEON optimizations of SynetDeconvolution32f framework.</li>
+ <li>Swish activation function to NEON optimizations of SynetMergedConvolution32f framework.</li>
+ <li>Swish activation function to NEON optimizations of SynetConvolution8i framework.</li>
+ <li>Swish activation function to NEON optimizations of SynetMergedConvolution8i framework.</li>
+ <li>NEON optimizations of function Yuv444pToBgraV2.</li>
+ <li>SSE2, AVX2, AVX-512BW, NEON optimizations of function Yuv420pToBgraV2.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE4.1 optimizations of ResizerByteBicubic class.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error in NEON optimizations of function AlphaUnpremultiply.</li>
+ <li>MSVS Compiler warnings in SSE4.1, AVX2, AVX-512BW optimizations of function TransformImage.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R110">February 1, 2022 (version 4.9.110)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE4.1 optimizations of ResizerByteBicubic class.</li>
+ <li>Base implementation of function BgraToYuv444pV2.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of function Nv12SaveAsJpegToMemory.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of function Yuv420pSaveAsJpegToMemory.</li>
+ <li>Base implementation of function BgraToYuv420pV2.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in SSE4.1, AVX2, AVX-512BW optimizations of function BgraToRgba.</li>
+ <li>Error in SSE4.1, AVX2 optimizations of function BgraToBgr.</li>
+ <li>Error in SSE4.1, AVX2 optimizations of function BgraToRgb.</li>
+ <li>Error in Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of function AlphaUnpremultiply.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function BgraToYuv444pV2.</li>
+ <li>Tests for verifying functionality of function Nv12SaveAsJpegToMemory.</li>
+ <li>Tests for verifying functionality of function Yuv420pSaveAsJpegToMemory.</li>
+ <li>Tests for verifying functionality of function BgraToYuv420pV2.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R109">January 3, 2022 (version 4.9.109)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Parameter Uyvy422ToBgr to function.</li>
+ <li>SSE4.1, AVX2 optimizations of function Uyvy422ToBgr.</li>
+ <li>Base implementation, SSE4.1, AVX2 optimizations of function Uyvy422ToYuv420p.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of function Base64Encode.</li>
+ <li>Base implementation of function Base64Decode.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>AVX2 optimizations of class ResizerNearest for Bgr24, Uv16.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Function UyvyToBgr to Uyvy422ToBgr.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function Uyvy422ToYuv420p.</li>
+ <li>Tests for verifying functionality of function Base64Encode.</li>
+ <li>Tests for verifying functionality of function Base64Decode.</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>Changes</h5>
+<ul>
+ <li>Update developers list.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/> 
+
+</td> </tr> </table> </center> </body> </html>

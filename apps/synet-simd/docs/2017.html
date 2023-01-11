@@ -1,0 +1,982 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Simd Library Release Notes (2017)</title>
+</head>
+<body> <center><table width=1024><tr><td>
+<a id="HOME"><a>
+<center>
+<img width="200" height="100" src="logo.png">
+<h1>Simd Library Release Notes (2017).</h1>
+<a href="index.html">Home</a> |
+<a href="2022.html">Release Notes</a> | 
+<a href="download.html">Download</a> | 
+<a href="help/index.html">Documentation</a> | 
+<a href="http://github.com/ermig1979/Simd/issues">Issues</a> | 
+<a href="http://github.com/ermig1979/Simd" target="_top">GitHub</a> 
+</center>
+<hr/> 
+</td></tr><tr><td>
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/>
+<h3 id="R060">December 1, 2017 (version 4.1.60.1325)</h3>
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE4.1, AVX, AVX2 and AVX-512BW optimizations of function HogLiteFilterSeparable.</li>
+ <li>Base implementation, SSE4.1 and AVX2 optimizations of function HogLiteFindMax7x7.</li>
+ <li>Mask parameter for function HogLiteFilterFeatures.</li>
+ <li>Base implementation, SSE4.1, AVX2 and AVX-512BW optimizations of function HogLiteCreateMask.</li>
+ <li>Function Copy (to copy pyramids).</li>
+ <li>Method View::Row.</li>
+ <li>Font class.</li>
+ <li>Overloading of function DrawRectangle.</li>
+ <li>Multithreading to function Neural::Predict.</li>
+ <li>Method Neural::SetThreadNumber.</li>
+ <li>Motion framework.</li>
+</ul>
+<h5>Improved features</h5>
+<ul>
+ <li>SSE4.1 optimization of function DetectionHaarDetect32fp.</li>
+ <li>SSE4.1 optimization of function DetectionHaarDetect32fi.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Crash in AVX-512BW optimization of function SimdResizeBilinear.</li>
+ <li>Fixed bug in the function Neural::Save.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Performance report in HTML file format.</li>
+ <li>Tests for verifying functionality of function HogLiteFilterSeparable.</li>
+ <li>Tests for verifying functionality of function HogLiteFindMax7x7.</li>
+ <li>Tests for verifying functionality of function HogLiteCreateMask.</li>
+ <li>Special tests for verifying functionality of Font class.</li>
+ <li>Special tests for verifying functionality of Motion::Detector class.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Clang compiler error: "unknown argument: '-fabi-version=4'".</li>
+ <li>Clang compiler error concerned with FP16.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R059">November 1, 2017 (version 4.0.59.1282)</h3>
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Method Neural::Network::Save to save net weights to an external buffer.</li>
+ <li>Method Neural::Network::Load to load net weights from the external buffer.</li>
+ <li>Method Neural::Network::Empty.</li>
+ <li>Method View::Save supports PPM(Portable Pixel Map) image file format.</li>
+ <li>Method View::Load supports PPM(Portable Pixel Map) image file format.</li>
+ <li>AVX-512F optimization of function NeuralConvolutionForward.</li>
+ <li>Base implementation of function NormalizedColors.</li>
+ <li>Base implementation and AVX-512BW optimization of function ChangeColors.</li>
+ <li>AVX-512BW optimization of function NormalizeHistogram.</li>
+ <li>Base implementation, SSE4.1, AVX, AVX2 and AVX-512BW optimizations of function HogLiteExtractFeatures.</li>
+ <li>Base implementation, SSE4.1, AVX, AVX2 and AVX-512BW optimizations of function HogLiteFilterFeatures.</li>
+ <li>Base implementation, SSE4.1, AVX, AVX2 and AVX-512BW optimizations of function HogLiteResizeFeatures.</li>
+ <li>Base implementation, SSE4.1, AVX, AVX2 and AVX-512BW optimizations of function HogLiteCompressFeatures.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>A bug in base implementation of function PseudoHogExtractHistogram8x8x8.</li>
+ <li>A compiler error in function Avx512bw::FirstNotZero64.</li>
+ <li>A compiler error in function Avx512bw::LastNotZero64.</li>
+</ul>
+<h5>Improved features</h5>
+<ul>
+ <li>SSE4.1, AVX2 and AVX-512BW optimizations of function HogExtractFeatures</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralConvolutionForward.</li>
+ <li>Tests for verifying functionality of function ChangeColors.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function NormalizeHistogram.</li>
+ <li>Tests for verifying functionality of function HogLiteExtractFeatures.</li>
+ <li>Tests for verifying functionality of function HogLiteFilterFeatures.</li>
+ <li>Tests for verifying functionality of function HogLiteResizeFeatures.</li>
+ <li>Tests for verifying functionality of function HogLiteCompressFeatures.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Improving</h5>
+<ul>
+ <li>Code formating.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Wrong options for AVX-512F and AVX-512BW in Visual Stidio 2017 project files.</li>
+ <li>Error during project building for Visual Studio if path to project directory contains spaces.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R058">October 2, 2017 (version 4.0.58.1229)</h3>
+ 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>AVX-512BW optimization of function BgrToYuv422p.</li>
+ <li>AVX-512BW optimization of function BgrToYuv444p.</li>
+ <li>AVX-512BW optimization of function Binarization.</li>
+ <li>AVX-512BW optimization of function AveragingBinarization.</li>
+ <li>AVX-512BW optimization of function ConditionalCount8u.</li>
+ <li>AVX-512BW optimization of function ConditionalCount16i.</li>
+ <li>AVX-512BW optimization of function ConditionalSum.</li>
+ <li>AVX-512BW optimization of function ConditionalSquareSum.</li>
+ <li>AVX-512BW optimization of function ConditionalSquareGradientSum.</li>
+ <li>AVX-512BW optimization of function ConditionalFill.</li>
+ <li>AVX-512BW optimization of function DeinterleaveUv.</li>
+ <li>AVX-512BW optimization of function DeinterleaveBgr.</li>
+ <li>AVX-512BW optimization of function DeinterleaveBgra.</li>
+ <li>AVX-512BW optimization of function EdgeBackgroundGrowRangeSlow.</li>
+ <li>AVX-512BW optimization of function EdgeBackgroundGrowRangeFast.</li>
+ <li>AVX-512BW optimization of function EdgeBackgroundIncrementCount.</li>
+ <li>AVX-512BW optimization of function EdgeBackgroundAdjustRange.</li>
+ <li>AVX-512BW optimization of function EdgeBackgroundAdjustRangeMasked.</li>
+ <li>AVX-512BW optimization of function EdgeBackgroundShiftRangeMasked.</li>
+ <li>AVX-512BW optimization of function FillBgr.</li>
+ <li>AVX-512BW optimization of function FillBgra.</li>
+ <li>AVX-512BW optimization of function Float32ToFloat16.</li>
+ <li>AVX-512BW optimization of function Float16ToFloat32.</li>
+ <li>AVX-512BW optimization of function SquaredDifferenceSum16f.</li>
+ <li>AVX-512BW optimization of function Float32ToUint8.</li>
+ <li>AVX-512BW optimization of function Uint8ToFloat32.</li>
+ <li>AVX-512BW optimization of function GaussianBlur3x3.</li>
+ <li>AVX-512BW optimization of function GrayToBgr.</li>
+ <li>AVX-512BW optimization of function GrayToBgra.</li>
+ <li>AVX-512BW optimization of function AbsSecondDerivativeHistogram.</li>
+ <li>AVX-512BW optimization of function HistogramMasked.</li>
+ <li>AVX-512BW optimization of function HistogramConditional.</li>
+ <li>AVX-512BW optimization of function Int16ToGray.</li>
+ <li>AVX-512BW optimization of function InterferenceIncrement.</li>
+ <li>AVX-512BW optimization of function InterferenceIncrementMasked.</li>
+ <li>AVX-512BW optimization of function InterferenceDecrement.</li>
+ <li>AVX-512BW optimization of function InterferenceDecrementMasked.</li>
+ <li>AVX-512BW optimization of function DetectionHaarDetect32fp.</li>
+ <li>AVX-512BW optimization of function DetectionHaarDetect32fi.</li>
+ <li>AVX-512BW optimization of function DetectionLbpDetect32fp.</li>
+ <li>AVX-512BW optimization of function DetectionLbpDetect32fi.</li>
+ <li>AVX-512BW optimization of function DetectionLbpDetect16ip.</li>
+ <li>AVX-512BW optimization of function DetectionLbpDetect16ii.</li>
+ <li>AVX-512BW optimization of function Laplace.</li>
+ <li>AVX-512BW optimization of function LaplaceAbs.</li>
+ <li>AVX-512BW optimization of function LaplaceAbsSum.</li>
+ <li>AVX-512BW optimization of function InterleaveUv.</li>
+ <li>AVX-512BW optimization of function InterleaveBgr.</li>
+ <li>AVX-512BW optimization of function InterleaveBgra.</li>
+ <li>AVX-512BW optimization of function LbpEstimate.</li>
+ <li>AVX-512BW optimization of function MeanFilter3x3.</li>
+ <li>AVX-512BW optimization of function MedianFilterRhomb3x3.</li>
+ <li>AVX-512BW optimization of function MedianFilterRhomb5x5.</li>
+ <li>AVX-512BW optimization of function MedianFilterSquare3x3.</li>
+ <li>AVX-512BW optimization of function MedianFilterSquare5x5.</li>
+ <li>AVX-512BW optimization of function ReduceGray2x2.</li>
+ <li>AVX-512BW optimization of function ReduceGray3x3.</li>
+ <li>AVX-512BW optimization of function ReduceGray4x4.</li>
+ <li>AVX-512BW optimization of function ReduceGray5x5.</li>
+ <li>AVX-512BW optimization of function Reorder16bit.</li>
+ <li>AVX-512BW optimization of function Reorder32bit.</li>
+ <li>AVX-512BW optimization of function Reorder64bit.</li>
+ <li>AVX-512BW optimization of function SegmentationChangeIndex.</li>
+ <li>AVX-512BW optimization of function SegmentationFillSingleHoles.</li>
+ <li>AVX-512BW optimization of function SegmentationPropagate2x2.</li>
+ <li>AVX-512BW optimization of function SegmentationShrinkRegion.</li>
+ <li>AVX-512BW optimization of function SobelDx.</li>
+ <li>AVX-512BW optimization of function SobelDxAbs.</li>
+ <li>AVX-512BW optimization of function SobelDxAbsSum.</li>
+ <li>AVX-512BW optimization of function SobelDy.</li>
+ <li>AVX-512BW optimization of function SobelDyAbs.</li>
+ <li>AVX-512BW optimization of function SobelDyAbsSum.</li>
+ <li>AVX-512BW optimization of function ContourMetrics.</li>
+ <li>AVX-512BW optimization of function ContourMetricsMasked.</li>
+ <li>AVX-512BW optimization of function ContourAnchors.</li>
+ <li>AVX-512BW optimization of function SquaredDifferenceSum.</li>
+ <li>AVX-512BW optimization of function SquaredDifferenceSumMasked.</li>
+ <li>AVX-512BW optimization of function GetStatistic.</li>
+ <li>AVX-512BW optimization of function GetMoments.</li>
+ <li>AVX-512BW optimization of function GetRowSums.</li>
+ <li>AVX-512BW optimization of function GetColSums.</li>
+ <li>AVX-512BW optimization of function GetAbsDyRowSums.</li>
+ <li>AVX-512BW optimization of function GetAbsDxColSums.</li>
+ <li>AVX-512BW optimization of function ValueSum.</li>
+ <li>AVX-512BW optimization of function SquareSum.</li>
+ <li>AVX-512BW optimization of function CorrelationSum.</li>
+ <li>AVX-512BW optimization of function StretchGray2x2.</li>
+ <li>AVX-512BW optimization of function TextureBoostedSaturatedGradient.</li>
+ <li>AVX-512BW optimization of function TextureBoostedUv.</li>
+ <li>AVX-512BW optimization of function TextureGetDifferenceSum.</li>
+ <li>AVX-512BW optimization of function TexturePerformCompensation.</li>
+ <li>AVX-512BW optimization of function Yuv420pToBgr.</li>
+ <li>AVX-512BW optimization of function Yuv422pToBgr.</li>
+ <li>AVX-512BW optimization of function Yuv444pToBgr.</li>
+ <li>AVX-512BW optimization of function Yuv420pToBgra.</li>
+ <li>AVX-512BW optimization of function Yuv422pToBgra.</li>
+ <li>AVX-512BW optimization of function Yuv444pToBgra.</li>
+ <li>AVX-512BW optimization of function Yuv420pToHue.</li>
+ <li>AVX-512BW optimization of function Yuv444pToHue.</li>
+ <li>AVX-512BW optimization of function ShiftBilinear.</li>
+ <li>AVX-512BW optimization of function ResizeBilinear.</li>
+ <li>AVX-512F optimization of function SvmSumLinear.</li>
+ <li>AVX2 and AVX-512BW optimizations of function Integral.</li>
+ <li>AVX-512F optimization of function SquaredDifferenceSum32f.</li>
+ <li>AVX-512F optimization of function SquaredDifferenceKahanSum32f.</li>
+ <li>AVX-512BW optimization of function HogDeinterleave.</li>
+ <li>AVX-512BW optimization of function HogDirectionHistograms.</li>
+ <li>AVX-512BW optimization of function HogExtractFeatures.</li>
+ <li>AVX-512BW optimization of function HogFilterSeparable.</li>
+ <li>Base implementation of function PseudoHogExtractHistogram8x8x8.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Potential overflow of short integer in function DetectionLbpDetect16ip.</li>
+ <li>Potential overflow of short integer in function DetectionLbpDetect16ii.</li>
+ <li>Visual Studio compiler bug in AVX-512BW optimization of function BgraToYuv420p.</li>
+ <li>Visual Studio compiler bug in AVX-512BW optimization of function BgraToYuv422p.</li>
+ <li>Visual Studio compiler bug in base implementation of function Yuv444pToHue.</li>
+</ul>
+<h5>Improved features</h5>
+<ul>
+ <li>AVX2 optimization of function ReduceGray3x3.</li>
+ <li>AVX-512BW optimization of function AbsDifferenceSum.</li>
+ <li>AVX-512BW optimization of function AbsDifferenceSumMasked.</li>
+ <li>AVX2 optimization of function ResizeBilinear for gray images</li>
+ <li>AVX2 optimization of function HogDirectionHistograms</li>
+ <li>Base implementation, SSE4.1 and AVX2 optimizations of function HogExtractFeatures</li>
+ <li>Base implementation, SSE and AVX2 optimizations of function HogFilterSeparable</li>
+</ul>
+<h5>Removed features</h5>
+<ul>
+ <li>SSE2, AVX2, NEON and VMX optimizations of function EdgeBackgroundShiftRange.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgrToYuv422p.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgrToYuv444p.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Binarization.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AveragingBinarization.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ConditionalCount8u.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ConditionalCount16i.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ConditionalSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ConditionalSquareSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ConditionalSquareGradientSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ConditionalFill.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DeinterleaveUv.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DeinterleaveBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DeinterleaveBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function EdgeBackgroundGrowRangeSlow.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function EdgeBackgroundGrowRangeFast.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function EdgeBackgroundIncrementCount.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function EdgeBackgroundAdjustRange.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function EdgeBackgroundAdjustRangeMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function EdgeBackgroundShiftRangeMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function FillBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function FillBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Float32ToFloat16.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Float16ToFloat32.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SquaredDifferenceSum16f.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Float32ToUint8.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Uint8ToFloat32.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GaussianBlur3x3.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GrayToBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GrayToBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AbsSecondDerivativeHistogram.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function HistogramMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function HistogramConditional.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Int16ToGray.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function InterferenceIncrement.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function InterferenceIncrementMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function InterferenceDecrement.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function InterferenceDecrementMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DetectionHaarDetect32fp.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DetectionHaarDetect32fi.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DetectionLbpDetect32fp.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DetectionLbpDetect32fi.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DetectionLbpDetect16ip.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function DetectionLbpDetect16ii.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Laplace.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function LaplaceAbs.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function LaplaceAbsSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function InterleaveUv.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function InterleaveBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function InterleaveBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function LbpEstimate.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function MeanFilter3x3.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function MedianFilterRhomb3x3.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function MedianFilterRhomb5x5.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function MedianFilterSquare3x3.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function MedianFilterSquare5x5.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ReduceGray2x2.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ReduceGray3x3.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ReduceGray4x4.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ReduceGray5x5.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Reorder16bit.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Reorder32bit.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Reorder64bit.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SegmentationChangeIndex.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SegmentationFillSingleHoles.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SegmentationPropagate2x2.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SegmentationShrinkRegion.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SobelDx.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SobelDxAbs.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SobelDxAbsSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SobelDy.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SobelDyAbs.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SobelDyAbsSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ContourMetrics.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ContourMetricsMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ContourAnchors.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SquaredDifferenceSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SquaredDifferenceSumMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GetStatistic.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GetMoments.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GetRowSums.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GetColSums.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GetAbsDyRowSums.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function GetAbsDxColSums.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ValueSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function SquareSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function CorrelationSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function StretchGray2x2.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function TextureBoostedSaturatedGradient.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function TextureBoostedUv.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function TextureGetDifferenceSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function TexturePerformCompensation.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv420pToBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv422pToBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv444pToBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv420pToBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv422pToBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv444pToBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv420pToHue.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Yuv444pToHue.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ShiftBilinear.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function ResizeBilinear.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function SvmSumLinear.</li>
+ <li>Tests for verifying functionality of AVX2 and AVX-512BW versions of function Integral.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function SquaredDifferenceSum32f.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function SquaredDifferenceKahanSum32f.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function HogDeinterleave.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function HogDirectionHistograms.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function HogExtractFeatures.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function HogFilterSeparable.</li>
+ <li>Tests for verifying functionality of base implementation of function PseudoHogExtractHistogram8x8x8.</li>
+</ul>
+<h5>Removed features</h5>
+<ul>
+ <li>Tests for verifying functionality of SSE2, AVX2, NEON and VMX versions of function EdgeBackgroundShiftRange.</li>
+</ul>
+ 
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R057">September 1, 2017 (version 4.0.57.1091)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE3, AVX and AVX2 optimizations of function NeuralConvolutionForward.</li>
+ <li>AVX-512F optimization of function NeuralDerivativeSigmoid.</li>
+ <li>AVX-512F optimization of function NeuralRoughTanh.</li>
+ <li>AVX-512F optimization of function NeuralDerivativeTanh.</li>
+ <li>AVX-512F optimization of function NeuralRelu.</li>
+ <li>AVX-512F optimization of function NeuralDerivativeRelu.</li>
+ <li>AVX-512BW optimization of function NeuralConvert.</li>
+ <li>AVX-512F optimization of function NeuralUpdateWeights.</li>
+ <li>AVX-512F optimization of function NeuralAdaptiveGradientUpdate.</li>
+ <li>AVX-512F optimization of function NeuralPooling2x2Max2x2.</li>
+ <li>AVX-512F optimization of function NeuralPooling1x1Max3x3.</li>
+ <li>AVX-512F optimization of function NeuralPooling2x2Max3x3.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution2x2Forward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution2x2Backward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution2x2Sum.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution3x3Forward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution3x3Backward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution4x4Forward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution4x4Backward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution5x5Forward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution5x5Backward.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution3x3Sum.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution4x4Sum.</li>
+ <li>AVX-512F optimization of function NeuralAddConvolution5x5Sum.</li>
+ <li>AVX-512BW optimization of function OperationBinary8u.</li>
+ <li>AVX-512BW optimization of function OperationBinary16i.</li>
+ <li>AVX-512BW optimization of function VectorProduct.</li>
+ <li>AVX-512BW optimization of function AbsDifferenceSum.</li>
+ <li>AVX-512BW optimization of function AbsDifferenceSumMasked.</li>
+ <li>AVX-512BW optimization of function AbsDifferenceSum3x3.</li>
+ <li>AVX-512BW optimization of function AbsDifferenceSum3x3Masked.</li>
+ <li>AVX-512BW optimization of function AbsGradientSaturatedSum.</li>
+ <li>AVX-512BW optimization of function AddFeatureDifference.</li>
+ <li>AVX-512BW optimization of function AlphaBlending.</li>
+ <li>AVX-512BW optimization of function BackgroundGrowRangeSlow.</li>
+ <li>AVX-512BW optimization of function BackgroundGrowRangeFast.</li>
+ <li>AVX-512BW optimization of function BackgroundIncrementCount.</li>
+ <li>AVX-512BW optimization of function BackgroundAdjustRange.</li>
+ <li>AVX-512BW optimization of function BackgroundAdjustRangeMasked.</li>
+ <li>AVX-512BW optimization of function BackgroundShiftRange.</li>
+ <li>AVX-512BW optimization of function BackgroundShiftRangeMasked.</li>
+ <li>AVX-512BW optimization of function BackgroundInitMask.</li>
+ <li>AVX-512BW optimization of function BgraToGray.</li>
+ <li>AVX-512BW optimization of function BgraToBgr.</li>
+ <li>AVX-512BW optimization of function BgraToBayer.</li>
+ <li>AVX-512BW optimization of function BgraToYuv420p.</li>
+ <li>AVX-512BW optimization of function BgraToYuv422p.</li>
+ <li>AVX-512BW optimization of function BgraToYuv444p.</li>
+ <li>AVX-512BW optimization of function BgrToBayer.</li>
+ <li>AVX-512BW optimization of function BgrToBgra.</li>
+ <li>AVX-512BW optimization of function Bgr48pToBgra32.</li>
+ <li>AVX-512BW optimization of function BgrToGray.</li>
+ <li>AVX-512BW optimization of function BgrToYuv420p.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Tail processing in AVX-512F version of function NeuralProductSum.</li>
+ <li>Tail processing in AVX-512F version of function NeuralAddVectorMultipliedByValue.</li>
+ <li>Tail processing in AVX-512F version of function NeuralAddVector.</li>
+ <li>Tail processing in AVX-512F version of function NeuralAddValue.</li>
+ <li>Tail processing in AVX-512F version of function NeuralRoughSigmoid.</li>
+ <li>Tail processing in AVX-512F version of function NeuralRoughSigmoid2.</li>
+ <li>Forward propagation of Neural::ConvolutionLayer.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>GCC compiler bug in function Allocator::Alignment.</li>
+ <li>Program crashes in Simd::Detection when small value of parameter scaleFactor is used.</li>
+ <li>ARM FP16 GCC compiler error in file SimdNeonFloat16.cpp.</li>
+ <li>Error in function Neural::MaxPoolingLayer::Forward.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function NeuralConvolutionForward.</li>
+ <li>AVX-512 performance statistic.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralDerivativeSigmoid.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralRoughTanh.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralDerivativeTanh.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralRelu.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralDerivativeRelu.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function NeuralConvert.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralUpdateWeights.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAdaptiveGradientUpdate.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralPooling2x2Max2x2.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralPooling1x1Max3x3.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralPooling2x2Max3x3.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution2x2Forward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution2x2Backward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution2x2Sum.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution3x3Forward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution3x3Backward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution4x4Forward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution4x4Backward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution5x5Forward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution5x5Backward.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution3x3Sum.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution4x4Sum.</li>
+ <li>Command line parameters -w and -h to set width and height of test image.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddConvolution5x5Sum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function OperationBinary8u.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function OperationBinary16i.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function VectorProduct.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AbsDifferenceSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AbsDifferenceSumMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AbsDifferenceSum3x3.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AbsDifferenceSum3x3Masked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AbsGradientSaturatedSum.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AddFeatureDifference.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function AlphaBlending.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundGrowRangeSlow.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundGrowRangeFast.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundIncrementCount.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundAdjustRange.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundAdjustRangeMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundShiftRange.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundShiftRangeMasked.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BackgroundInitMask.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgraToGray.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgraToBgr.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgraToBayer.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgraToYuv420p.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgraToYuv422p.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgraToYuv444p.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgrToBayer.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgrToBgra.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function Bgr48pToBgra32.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgrToGray.</li>
+ <li>Tests for verifying functionality of AVX-512BW version of function BgrToYuv420p.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>An error in function NeuralAddConvolutionAutoTest.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R056">August 1, 2017 (version 3.6.56.1005)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE, AVX, AVX2 and NEON optimizations of function NeuralAddConvolution4x4Forward.</li>
+ <li>Base implementation, SSE, AVX, AVX2 and NEON optimizations of function NeuralAddConvolution2x2Backward.</li>
+ <li>Base implementation, SSE, AVX, AVX2 and NEON optimizations of function NeuralAddConvolution4x4Backward.</li>
+ <li>Base implementation, SSE, SSE3, AVX, AVX2 and NEON optimizations of function NeuralAddConvolution2x2Sum.</li>
+ <li>Base implementation, SSE, SSE3, AVX, AVX2 and NEON optimizations of function NeuralAddConvolution4x4Sum.</li>
+ <li>AVX2 optimization of function NeuralAddConvolution3x3Backward.</li>
+ <li>AVX2 optimization of function NeuralAddConvolution5x5Backward.</li>
+ <li>DrawPolygon function.</li>
+ <li>DrawFilledRectangle function.</li>
+ <li>DrawEllipse function.</li>
+ <li>DrawCircle function.</li>
+ <li>AVX-512F optimization of function NeuralAddVectorMultipliedByValue.</li>
+ <li>AVX-512F optimization of function NeuralAddVector.</li>
+ <li>AVX-512F optimization of function NeuralAddValue.</li>
+ <li>AVX-512F optimization of function NeuralProductSum.</li>
+ <li>AVX-512F optimization of function NeuralRoughSigmoid.</li>
+ <li>AVX-512F optimization of function NeuralRoughSigmoid2.</li>
+ <li>SimdCpuInfo function.</li>
+ <li>Parameters poolingStride and poolingPad in constructor of Neural::MaxPoolingLayer.</li>
+ <li>Parameters poolingStride and poolingPad in constructor of Neural::AveragePoolingLayer.</li>
+ <li>Base implementation, SSE, AVX2 and NEON optimizations of function NeuralPooling2x2Max3x3.</li>
+ <li>Abstract class Neural::PoolingLayer.</li>
+ <li>Base implementation, SSE, AVX2 and NEON optimizations of function NeuralPooling1x1Max3x3.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Removed restriction of input image size in function NeuralPooling2x2Max2x2.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Function NeuralMax2x2 to NeuralPooling2x2Max2x2.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function NeuralAddConvolution4x4Forward.</li>
+ <li>Tests for verifying functionality of function NeuralAddConvolution2x2Backward.</li>
+ <li>Tests for verifying functionality of function NeuralAddConvolution4x4Backward.</li>
+ <li>Tests for verifying functionality of function NeuralAddConvolution2x2Sum.</li>
+ <li>Tests for verifying functionality of function NeuralAddConvolution4x4Sum.</li>
+ <li>Tests for verifying functionality of AVX2 version of function NeuralAddConvolution3x3Backward.</li>
+ <li>Tests for verifying functionality of AVX2 version of function NeuralAddConvolution5x5Backward.</li>
+ <li>Special tests for verifying functionality of function DrawPolygon.</li>
+ <li>Special tests for verifying functionality of function DrawFilledRectangle.</li>
+ <li>Special tests for verifying functionality of function DrawFilledPolygon.</li>
+ <li>Special tests for verifying functionality of function DrawEllipse.</li>
+ <li>Special tests for verifying functionality of function DrawCircle.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddVectorMultipliedByValue.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddVector.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralAddValue.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralProductSum.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralRoughSigmoid.</li>
+ <li>Tests for verifying functionality of AVX-512F version of function NeuralRoughSigmoid2.</li>
+ <li>Tests for verifying functionality of function NeuralPooling2x2Max3x3.</li>
+ <li>Tests for verifying functionality of function NeuralPooling1x1Max3x3.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>Avx512f section for AVX-512F extension (CMake and Visual Studio).</li>
+ <li>Avx512bw section for AVX-512BW extension (CMake and Visual Studio).</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in the library description.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R055">July 4, 2017 (version 3.6.55.971)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>NEON optimization of function Float32ToFloat16.</li>
+ <li>NEON optimization of function Float16ToFloat32.</li>
+ <li>NEON optimization of function SquaredDifferenceSum16f.</li>
+ <li>NEON optimization of function Float32ToUint8.</li>
+ <li>NEON optimization of function Uint8ToFloat32.</li>
+ <li>NEON optimization of function NeuralAddVector.</li>
+ <li>NEON optimization of function NeuralAddValue.</li>
+ <li>NEON optimization of function HogDeinterleave.</li>
+ <li>NEON optimization of function HogFilterSeparable.</li>
+ <li>NEON optimization of function HogExtractFeatures.</li>
+ <li>Base implementation, SSE, AVX, AVX2 and NEON optimizations of function NeuralAddConvolution2x2Forward.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Clang specific: using of unknown compiler options.</li>
+ <li>Error in AVX2 optimization of function HogFilterSeparable.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of NEON version of function Float32ToFloat16.</li>
+ <li>Tests for verifying functionality of NEON version of function Float16ToFloat32.</li>
+ <li>Tests for verifying functionality of NEON version of function SquaredDifferenceSum16f.</li>
+ <li>Tests for verifying functionality of NEON version of function Float32ToUint8.</li>
+ <li>Tests for verifying functionality of NEON version of function Uint8ToFloat32.</li>
+ <li>Tests for verifying functionality of NEON version of function NeuralAddVector.</li>
+ <li>Tests for verifying functionality of NEON version of function NeuralAddValue.</li>
+ <li>Tests for verifying functionality of NEON version of function HogDeinterleave.</li>
+ <li>Tests for verifying functionality of NEON version of function HogFilterSeparable.</li>
+ <li>Tests for verifying functionality of NEON version of function HogExtractFeatures.</li>
+ <li>Tests for verifying functionality of function NeuralAddConvolution2x2Forward.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Clang compiler error in file TestImageMatcher.</li>
+ <li>Compiler warning in file TestHog.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R054">June 1, 2017 (version 3.6.54.954)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE and AVX optimizations of function NeuralAddValue.</li>
+ <li>Optional random shuffle of training set in Neural::Train.</li>
+ <li>Function DrawFilledPolygon.</li>
+ <li>AVX2 optimization of function NeuralAddConvolution3x3Forward.</li>
+ <li>Base implementation and AVX2 optimizations of function Float32ToFloat16.</li>
+ <li>Base implementation and AVX2 optimizations of function Float16ToFloat32.</li>
+ <li>Base implementation and AVX2 optimizations of function SquaredDifferenceSum16f.</li>
+ <li>New constructor in structure Frame.</li>
+ <li>MSA optimization of function OperationBinary8u.</li>
+ <li>MSA optimization of function OperationBinary16i.</li>
+ <li>Base implementation, SSE2 and AVX2 optimizations of function Float32ToUint8.</li>
+ <li>Base implementation, SSE2 and AVX2 optimizations of function Uint8ToFloat32.</li>
+ <li>Base implementation, SSE and AVX2 optimizations of function HogFilterSeparable.</li>
+ <li>Base implementation, SSE and AVX2 optimizations of function HogDeinterleave.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Forward and backward propagation in Neural::ConvolutionalLayer for core size 1x1.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in method Neural::FullyConnectedLayer::Forward.</li>
+ <li>Compiler error in file SimdDetection.hpp.</li>
+ <li>Clang compiler warning in file SimdDrawing.hpp.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function NeuralAddValue.</li>
+ <li>Tests for verifying functionality of AVX2 version of function NeuralAddConvolution3x3Forward.</li>
+ <li>Tests for verifying functionality of function Float32ToFloat16.</li>
+ <li>Tests for verifying functionality of function Float16ToFloat32.</li>
+ <li>Tests for verifying functionality of function SquaredDifferenceSum16f.</li>
+ <li>Tests for verifying functionality of MSA version of function OperationBinary8u.</li>
+ <li>Tests for verifying functionality of MSA version of function OperationBinary16i.</li>
+ <li>Tests for verifying functionality of function Float32ToUint8.</li>
+ <li>Tests for verifying functionality of function Uint8ToFloat32.</li>
+ <li>Tests for verifying functionality of function HogFilterSeparable.</li>
+ <li>Tests for verifying functionality of function HogDeinterleave.</li>
+</ul>
+
+<h4>The use examples</h4>
+<h5>New features</h5>
+<ul>
+ <li>An example how to detect faces with using of Simd::Detection in the video captured by OpenCV.</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>New features</h5>
+<ul>
+ <li>An example how to detect faces with using of Simd::Detection in the video captured by OpenCV.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Doxygen warning in file SimdRectangle.hpp.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>Use.vcxprj (Visual Studio 2015 project) for the use examples.</li>
+ <li>Added to CMakeLists.txt a section for building of the library for MIPS CPU architecture.</li>
+ <li>Msa project for MIPS MSA extension (CMake and Visual Studio).</li>
+ <li>Refactoring of CMakeLists.txt.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R053">May 2, 2017 (version 3.6.53.927)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>CrossEntropy loss function type in Neural framework.</li>
+ <li>Improving of SSE4.1 optimization of function HogDirectionHistograms.</li>
+ <li>Improving of AVX2 optimization of function HogDirectionHistograms.</li>
+ <li>Base implementation, SSE4.1 and AVX2 optimizations of function HogExtractFeatures.</li>
+ <li>Improving performance of method Neural::Network::Load.</li>
+ <li>Not square shape of convolution core in Neural::ConvolutionalLayer.</li>
+ <li>Class Neural::AveragePoolingLayer.</li>
+ <li>Parameter regionAreaMin in method ShiftDetector::Estimate.</li>
+ <li>Base implementation, SSE and AVX optimizations of function NeuralAddVector.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Function NeuralAddConvolution3x3 to NeuralAddConvolution3x3Forward.</li>
+ <li>Function NeuralAddConvolution5x5 to NeuralAddConvolution5x5Forward.</li>
+ <li>Function NeuralAddConvolution3x3Back to NeuralAddConvolution3x3Backward.</li>
+ <li>Function NeuralAddConvolution5x5Back to NeuralAddConvolution5x5Backward.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler warning in ImageMatcher structure.</li>
+ <li>GCC compiler error in Neural::Function structure.</li>
+ <li>Visual Studio 2017 compiler warning in function Shift::InitLevels.</li>
+ <li>Visual Studio 2017 compiler warning in function Avx2::TexturePerformCompensation.</li>
+ <li>Float point number overflow in function Neural::Function::SoftmaxFunction.</li>
+ <li>Float point number overflow in function Avx2::HogDirectionHistograms.</li>
+ <li>Compiler error in SimdEnable.h on PowerPC platform.</li>
+ <li>Program crash in function Int16ToGray.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function HogExtractFeatures.</li>
+ <li>Additional special tests for verifying functionality of Neural framework.</li>
+ <li>Tests for verifying functionality of function NeuralAddVector.</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>Improving</h5>
+<ul>
+ <li>Description of interaction Simd Library and OpenCV.</li>
+ <li>Download link to current master on GitHub.</li>
+</ul>
+<h5>Changes</h5>
+<ul>
+ <li>Changed location of help documentation (./docs/ instead of ./doc/).</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>An error in Doxygen's description of ImageMatcher structure.</li>
+ <li>An error in Doxygen's header and footer HTML template files.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>Visual Studio 2017 solution for Windows.</li>
+ <li>Visual Studio 2017 solution for Android.</li>
+</ul>
+<h5>Changes</h5>
+<ul>
+ <li>Changed location of scripts for help generation and release building.</li>
+ <li>Changed project site location (from http://simd.sourceforge.net to http://ermig1979.github.io/Simd).</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Removing of unwanted files in release build script.</li>
+ <li>Incorrect path to save build log in Visual Studio 2017.</li>
+ <li>Error in UpdateCopyrights.cmd script.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R052">April 3, 2017 (version 3.5.52.900)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>ImageMatcher structure.</li>
+ <li>Improving of AVX2 optimization of function HogDirectionHistograms.</li>
+ <li>dstStride parameter in function NeuralConvert.</li>
+ <li>Softmax activation function type in Neural framework.</li>
+ <li>CrossEntropyMulticlass loss function type in Neural framework.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Link error in function Simd::Neural::Detail::InitWeight.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Special tests for verifying functionality of structure ImageMatcher.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>UpdateCopyrights.cmd script.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+<h3 id="R051">March 2, 2017 (version 3.4.51.886)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Function Simd::ReduceGray.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Using of Simd::Parallel in Simd::Detection instead of its own implementation of multithreading.</li>
+ <li>Improving of AVX2 optimization of function Binarization.</li>
+ <li>Improving of AVX2 optimization of function AveragingBinarization.</li>
+ <li>Improving of AVX2 optimization of function ConditionalFill.</li>
+ <li>Improving of AVX2 optimization of function HogDirectionHistograms.</li>
+ <li>Improving of AVX2 optimization of function SegmentationChangeIndex.</li>
+ <li>Improving of AVX2 optimization of function SegmentationPropagate2x2.</li>
+ <li>Improving of AVX2 optimization of function SegmentationFillSingleHoles.</li>
+ <li>Improving of SSE4.1 optimization of function DetectionLbpDetect32fp.</li>
+ <li>Improving of SSE4.1 optimization of function DetectionLbpDetect32fi.</li>
+ <li>Improving of SSE4.1 optimization of function DetectionLbpDetect16ip.</li>
+ <li>Improving of SSE4.1 optimization of function DetectionLbpDetect16ii.</li>
+</ul>
+<h5>Changes</h5>
+<ul>
+ <li>Enumeration SimdReduceType instead of enumeration Simd::Pyramid::BuildType.</li>
+ <li>Function Simd::Fill instead of method Simd::Pyramid::Fill.</li>
+ <li>Function Simd::Build instead of method Simd::Pyramid::Build.</li>
+ <li>Refactoring (template parameter Allocator) in structure View and connected with it functions and structures.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Clang compiler error in View struct.</li>
+ <li>Clang compiler error in Frame struct.</li>
+ <li>Clang compiler error in Pixel file.</li>
+ <li>Clang compiler error in ContourDetector struct.</li>
+ <li>Clang specific bug in AVX2 optimization of functions BgrToGray and BgrToBgra.</li>
+ <li>Clang compiler error in function Sse2::ExtractInt32Sum on OSX.</li>
+ <li>GCC build error on Aarch64.</li>
+ <li>Error in base implementation of function FillBgr on Aarch64.</li>
+ <li>Error in base implementation of function FillBgra on Aarch64.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>Compatibility with Clang C++ compiler.</li>
+ <li>Compatibility with Aarch64 platform.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+<h3 id="R050">February 2, 2017 (version 3.4.50.872)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>ContourDetector structure.</li>
+ <li>DrawLine function.</li>
+ <li>DrawRectangle function.</li>
+ <li>ShiftDetector structure.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Special tests for verifying functionality of structure ContourDetector.</li>
+ <li>Special tests for verifying functionality of function DrawLine.</li>
+ <li>Special tests for verifying functionality of function DrawRectangle.</li>
+ <li>Special tests for verifying functionality of structure ShiftDetector.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Incorrect common statistic of influence of memory alignment.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+<h3 id="R049">January 3, 2017 (version 3.3.49.861)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE2, AVX2 and NEON optimizations of function Int16ToGray.</li>
+ <li>SSE2, AVX2 and NEON optimizations of function HistogramConditional.</li>
+ <li>Neural::DropoutLayer.</li>
+ <li>AVX2 optimization of function NeuralProductSum.</li>
+ <li>Extended functionality of function OperationBinary8u (added bitwise OR operation).</li>
+ <li>AVX2 optimization of function NeuralAddVectorMultipliedByValue.</li>
+ <li>Added operator + (const Rectangle &, const Rectangle &).</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Improving of AVX2 optimization of function NeuralAddConvolution5x5.</li>
+ <li>Improving of AVX2 optimization of function NeuralAddConvolution5x5Sum.</li>
+ <li>Improving of AVX2 optimization of function NeuralAddConvolution3x3Sum.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>GCC compiler error in file SimdAvx2Neural.</li>
+ <li>Crash during restoring of training process in function Neural::Train.</li>
+ <li>Visual Studio 2013 compiler bug in file SimdAvx2Neural.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function Int16ToGray.</li>
+ <li>Tests for verifying functionality of AVX2 version of function NeuralProductSum.</li>
+ <li>Tests for verifying functionality of AVX2 version of function NeuralAddVectorMultipliedByValue.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>SimdVersion.h generation error in CMakeLists.txt.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/> 
+
+</td> </tr> </table> </center> </body> </html>

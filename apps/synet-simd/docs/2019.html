@@ -1,0 +1,663 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Simd Library Release Notes (2019)</title>
+</head>
+<body> <center><table width=1024><tr><td>
+<a id="HOME"><a>
+<center>
+<img width="200" height="100" src="logo.png">
+<h1>Simd Library Release Notes (2019).</h1>
+<a href="index.html">Home</a> |
+<a href="2022.html">Release Notes</a> | 
+<a href="download.html">Download</a> | 
+<a href="help/index.html">Documentation</a> | 
+<a href="http://github.com/ermig1979/Simd/issues">Issues</a> | 
+<a href="http://github.com/ermig1979/Simd" target="_top">GitHub</a> 
+</center>
+<hr/> 
+</td></tr><tr><td>
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/>
+
+<h3 id="R084">December 2, 2019 (version 4.4.84)</h3>
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Method View::Clear.</li>
+ <li>Parameter makeCopy in method ShiftDetector::SetBackground.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function SynetPoolingForwardAverage.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE, AVX, AVX2, AVX-512F and NEON optimizations of Convolution32f framework.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Crash when defined SIMD_PERFORMANCE_STATISTIC.</li>
+ <li>Compiler warning in SSSE3 and AVX2 optimizations of Resizer.</li>
+ <li>Error in base implementation of function SquaredDifferenceKahanSum32f (Visual Studio 2019).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetPoolingForwardAverage.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R083">November 1, 2019 (version 4.4.83)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW and NEON optimizations of function SynetSetInput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function SynetHswish32f.</li>
+ <li>Support of Hswish activation function in Convolution32f framework.</li>
+ <li>Support of Hswish activation function in MergedConvolution32f framework.</li>
+ <li>Support of Hswish activation function in Deconvolution32f framework.</li>
+ <li>Support of 5x5 and 7x7 depthwise convolution in the middle layer of MergedConvolution32f framework.</li>
+ <li>Base implementation, SSE, AVX, AVX-512BW and NEON optimizations of function SynetShuffleLayerForward.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512BW and NEON optimizations of function GetObjectMoments.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE2, AVX2, AVX-512BW and NEON optimizations of function GetObjectMoments.</li>
+ <li>NEON optimization of function Gemm32fNN.</li>
+ <li>NEON optimization of function Gemm32fNT.</li>
+ <li>NEON optimization of Convolution32f framework.</li>
+ <li>NEON optimization of MergedConvolution32f framework.</li>
+ <li>NEON optimization of Deconvolution32f framework.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Function from SynetRestrictRange to SynetRestrictRange32f.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>GCC-4.9 compiler error in function Base::CpuCacheSize.</li>
+ <li>Error in SSE2 optimization of Resizer framework.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetSetInput.</li>
+ <li>Tests for verifying functionality of function SynetHswish32f.</li>
+ <li>Tests for verifying functionality of function SynetShuffleLayerForward.</li>
+ <li>Tests for verifying functionality of function GetObjectMoments.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Missing of file Prop.props for Microsoft Visual Studio 2019.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R082">October 1, 2019 (version 4.4.82)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>View::Clone method (it creates clone on the base of external buffer).</li>
+ <li>Function Simd::PrintInfo.</li>
+ <li>SynetDeconvolution32f Framework.</li>
+ <li>Base implementation, SSE2, AVX, AVX2, AVX-512F and NEON optimizations of SynetDeconvolution32fGemmNN class.</li>
+ <li>Base implementation, SSE2, AVX, AVX2, AVX-512F and NEON optimizations of SynetDeconvolution32fNhwcDirect2x2 class.</li>
+</ul>
+
+<h5>Improving</h5>
+<ul>
+ <li>Now CpuInfo gets L1D, L2, L3 cache sizes, numbers of sockets, cpus and threads.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Function from ConvolutionInit to SynetConvolution32fInit.</li>
+ <li>Function from ConvolutionExternalBufferSize to SynetConvolution32fExternalBufferSize.</li>
+ <li>Function from ConvolutionInternalBufferSize to SynetConvolution32fInternalBufferSize.</li>
+ <li>Function from ConvolutionSetParams to SynetConvolution32fSetParams.</li>
+ <li>Function from ConvolutionForward to SynetConvolution32fForward.</li>
+ <li>Function from MergedConvolutionInit to SynetMergedConvolution32fInit.</li>
+ <li>Function from MergedConvolutionExternalBufferSize to SynetMergedConvolution32fExternalBufferSize.</li>
+ <li>Function from MergedConvolutionInternalBufferSize to SynetMergedConvolution32fInternalBufferSize.</li>
+ <li>Function from MergedConvolutionSetParams to SynetMergedConvolution32fSetParams.</li>
+ <li>Function from MergedConvolutionForward to SynetMergedConvolution32fForward.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in Resizer framework (in file SimdBaseResizer.cpp).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of SynetDeconvolution32f Framework.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>Project files for Microsoft Visual Studio 2019.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Some Microsoft Visual Studio project properties can cause program crash at old CPUs.</li>
+ <li>Using of AVX512 property instead of SIMD_AVX512 in CMakeLists.txt.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R081">September 2, 2019 (version 4.3.81)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>SimdTensorFormatNchwXc and SimdTensorFormatOyxiXo types in SimdTensorFormatType enumeration.</li>
+ <li>Function SynetSpecifyTensorFormat.</li>
+ <li>Function SynetTensorAlignment.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetAddBias.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetScaleLayerForward.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetFusedLayerForward0.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetFusedLayerForward1.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetFusedLayerForward2.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetFusedLayerForward3.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetFusedLayerForward4.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetFusedLayerForward8.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetFusedLayerForward9.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetLrnLayerCrossChannels.</li>
+ <li>Support of NCHW4c, NCHW8c, NCHW16c formats in function SynetPreluLayerForward.</li>
+ <li>Support of P2(pgm) and P3(ppm) image formats in View::Load.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512F and NEON optimizations of function SynetElu32f.</li>
+ <li>Support of Elu activation function in Convolution framework.</li>
+ <li>Support of Elu activation function in MergedConvolution framework.</li>
+ <li>New meaning of add parameter in MergedConvolution framework.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Performance measurement in Convolution and MergedConvolution frameworks.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in function Convert (in file SimdFrame.hpp).</li>
+ <li>Error in function MergedConvolutionForward.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetAddBias for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetScaleLayerForward for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward0 for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward1 for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward2 for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward3 for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward4 for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward8 for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward9 for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetLrnLayerCrossChannels for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Tests for verifying functionality of function SynetPreluLayerForward for NCHW4c, NCHW8c, NCHW16c tensor formats.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512F and NEON optimizations of function SynetElu32f.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Renaming</h5>
+<ul>
+ <li>Parameter from AVX512 to SIMD_AVX512 in CMakeLists.txt.</li>
+ <li>Parameter from PRINT_INFO to SIMD_INFO in CMakeLists.txt.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R080">August 1, 2019 (version 4.3.80)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function SynetFusedLayerForward8.</li>
+ <li>Partial batch merging in Convolution algorithm (Winograd and GemmNN methods).</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function Winograd3x3SetFilter.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function Winograd3x3SetInput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function Winograd3x3SetOutput.</li>
+ <li>Winograd3x3 method in Convolution algorithm.</li>
+ <li>Runtime choice of best micro kernel in Convolution Framework (GemmNN and Winograd methods).</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function SynetFusedLayerForward9.</li>
+ <li>SimdTensorFormatType enumeration.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function SynetConvertImage.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function SynetConvertFilter.</li>
+</ul>
+
+<h5>Improving</h5>
+<ul>
+ <li>Performance profiling.</li>
+ <li>SSE, AVX, AVX2, AVX-512F and NEON optimizations of MergedConvolution framework.</li>
+ <li>SSE, AVX, AVX2, AVX-512F and NEON optimizations of Convolution Framework (GemmNN and Winograd methods).</li>
+</ul>
+
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in Convolution Framework (GemmNN method).</li>
+ <li>Low performance of NEON optimization in Convolution Framework (GemmNN and Winograd methods).</li>
+ <li>Crash in base implementation of in functions FillPixel, FillBgra, FillUv (GCC, -O3).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward8.</li>
+ <li>Tests for verifying functionality of function Winograd3x3SetFilter.</li>
+ <li>Tests for verifying functionality of function Winograd3x3SetInput.</li>
+ <li>Tests for verifying functionality of function Winograd3x3SetOutput.</li>
+ <li>Special complex tests for verifying functionality of functions Winograd2x3SetFilter, Winograd2x3SetInput and Winograd2x3SetOutput.</li>
+ <li>Special complex tests for verifying functionality of functions Winograd3x3SetFilter, Winograd3x3SetInput and Winograd3x3SetOutput.</li>
+ <li>Special complex tests for verifying functionality of functions Winograd4x3SetFilter, Winograd4x3SetInput and Winograd4x3SetOutput.</li>
+ <li>Tests for verifying functionality of function SynetFusedLayerForward9.</li>
+ <li>Tests for verifying functionality of function SynetConvertImage.</li>
+ <li>Tests for verifying functionality of function SynetConvertFilter.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>SIMD_PERF parameter in CMakeLists.txt.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Visual Studio project build error (in file GetVersion.cmd).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R079">July 2, 2019 (version 4.3.79)</h3>
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Additional macros for performance profiling.</li>
+ <li>Add function SimdPerformanceStatistic.</li>
+ <li>Base implementation, SSE, AVX, AVX2 AVX-512F and NEON optimizations of Convolution framework (NhwcDirect mode).</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE, AVX, AVX2, AVX-512F and NEON optimizations of MergedConvolution framework.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in function MergedConvolution::SetSize (Merged Convolution Framework).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R078">June 3, 2019 (version 4.3.78)</h3> 
+
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>SimdConvolutionParameters structure.</li>
+ <li>Base implementation, SSE, AVX, AVX2, AVX-512F and NEON optimizations of MergedConvolution framework (version 2).</li>
+ <li>Base implementation, AVX2 optimizations of function AbsDifference.</li>
+ <li>SSSE3 and NEON optimizations of function TransformImage (TransformTransposeRotate0 transformation).</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in Convolution framework (group != 1, NHWC mode).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function AbsDifference.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error in file TestResize.cpp (aarch64 toolchain).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R077">May 2, 2019 (version 4.3.77)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE2, AVX2, AVX-512F and NEON optimizations of function SynetLrnLayerCrossChannels(NHWC mode).</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW and NEON optimizations of function BgrToRgb.</li>
+ <li>Pixel::Rgb24 structure.</li>
+ <li>Base implementation of Resizer framework (area method, byte type).</li>
+ <li>SSE2, SSSE3, AVX2, AVX-512BW and NEON optimizations of Resizer framework (bilinear method, byte type).</li>
+ <li>SSE2, SSE4.1, AVX2, AVX-512BW and NEON optimizations of Resizer framework (area method, byte type).</li>
+ <li>Simd::Resize function.</li>
+ <li>Base implementation, SSE, AVX, AVX2 and AVX-512F optimizations of MergedConvolution framework.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>AVX-512F optimization of Convolution framework.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in SSE, AVX, AVX-512F and NEON optimizations of function Fill32f.</li>
+ <li>Out of range in SSE4.1, AVX2, AVX-512BW and NEON optimizations of functions DetectionHaarDetect32fp and DetectionHaarDetect32fi.</li>
+ <li>Out of range in SSE4.1, AVX2, AVX-512BW and NEON optimizations of functions DetectionLbpDetect32fp, DetectionLbpDetect32fi, DetectionLbpDetect16ip and DetectionLbpDetect16ii.</li>
+ <li>Error in AVX2, AVX-512BW and NEON optimizations of function CosineDistancesMxNa16f.</li>
+ <li>Error in AVX-512F optimization of function Convolution framework.</li>
+ <li>Error in SSE, AVX, AVX2, AVX-512F and NEON optimizations of Convolution framework (NHWC mode, depthwise convolution).</li>
+ <li>Error in AVX-512F optimization of Convolution framework (NHWC mode, winograd2x3 method).</li>
+ <li>Error in AVX-512F optimization of Convolution framework (function KernelHwcDefaultBody8).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetLrnLayerCrossChannels (NHWC mode).</li>
+ <li>Tests for verifying functionality of function BgrToRgb.</li>
+ <li>Tests for verifying functionality of MergedConvolution framework.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler warning for GCC >= 7.0 (ARM target).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R076">April 1, 2019 (version 4.3.76)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, AVX2, AVX-512BW and NEON optimizations of function CosineDistancesMxNa16f.</li>
+ <li>Macro SIMD_FUTURE_DISABLE.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function Winograd4x3SetInput(NHWC mode).</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function Winograd4x3SetOutput(NHWC mode).</li>
+ <li>Support of Winograd4x3 for Convolution framework (NHWC mode).</li>
+ <li>Parameter 'batch' in Convolution framework.</li>
+ <li>Function ConvolutionInternalBufferSize.</li>
+ <li>Use parameter trans instead of parameters srcT and dstT  in function ConvolutionInit.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>ConvolutionGemmNN method of Convolution framework (NHWC mode).</li>
+ <li>ConvolutionWinograd method of Convolution framework (NHWC mode).</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Function from GetFlushToZero to GetFastMode.</li>
+ <li>Function from SetFlushToZero to SetFastMode.</li>
+ <li>Function from ConvolutionBufferSize to ConvolutionExternalBufferSize.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error (using of name 'small' which can be system macro) in file SimdSse2Statistic.cpp.</li>
+ <li>Compiler warning (unused variable) in function Neon::SetFlushToZero.</li>
+ <li>Compiler warning (unused variable) in function Base::ConvolutionBiasAndActivation.</li>
+ <li>Compiler error (Visual Studio for Android) in file SimdSsse3Transform.cpp.</li>
+ <li>Compiler error (Visual Studio for Android) in function SimdCosineDistance16f.</li>
+ <li>Low performance of function SimdSquaredDifferenceSum16f.</li>
+ <li>Compiler warning (unused variable) in function Neon::AlphaFilling.</li>
+ <li>Compiler warning (unused variable) in function Neon::Fill32f.</li>
+ <li>Compiler warning (wrong initialization order) in file SimdNeonGemm32f.cpp.</li>
+ <li>Compiler warning (unused variable) in function Neon::SynetInnerProductLayerForward.</li>
+ <li>Compiler warning (unused variable) in file TestConvolution.cpp.</li>
+ <li>Compiler internal error (G++ 6.3.0) in function Neon::BgrToBgra.</li>
+ <li>Compiler error (aarch64) in functions Neon::GetFlushToZero and Neon::SetFlushToZero.</li>
+ <li>Error in NEON optimization of function HogLiteFindMax7x7.</li>
+ <li>Denormals performance bug.</li>
+ <li>Error in NEON optimization of function ReduceGray2x2.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function CosineDistancesMxNa16f.</li>
+ <li>Tests for verifying functionality of function Winograd4x3SetInput (NHWC mode).</li>
+ <li>Tests for verifying functionality of function Winograd4x3SetOutput (NHWC mode).</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error (Visual Studio for Android) in file TestFloat16.cpp.</li>
+ <li>Compiler warning (wrong initialization order) in file SimdNeonGemm32f.cpp.</li>
+ <li>Compiler internal error (G++ 4.9).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R075">March 7, 2019 (version 4.3.75)</h3>
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE2, SSSE3, AVX2 and AVX-512BW optimizations of function BgraToYuva420p.</li>
+ <li>NEON optimization of function NeuralSigmoid.</li>
+ <li>NEON optimization of function NeuralTanh.</li>
+ <li>NEON optimization of function NeuralPow.</li>
+ <li>NEON version of functions GetFlushToZero and SetFlushToZero.</li>
+ <li>NEON optimization of function Fill32f.</li>
+ <li>NEON optimization of function AlphaFilling.</li>
+ <li>NEON optimization of function CosineDistance16f.</li>
+ <li>NEON optimization of function CosineDistance32f.</li>
+ <li>NEON optimization of function Gemm32fNN.</li>
+ <li>NEON optimization of function Gemm32fNT.</li>
+ <li>NEON optimization of function FillPixel.</li>
+ <li>NEON optimization of function ReduceColor2x2.</li>
+ <li>NEON optimization of function BayerToBgra.</li>
+ <li>NEON optimization of function BayerToBgr.</li>
+ <li>NEON optimization of function TransformImage.</li>
+ <li>NEON optimization of function BgraToYuva420p.</li>
+ <li>NEON optimization of function Yuva420pToBgra.</li>
+ <li>NEON optimization of function Resizer.</li>
+ <li>NEON optimization of function HogLiteFindMax7x7.</li>
+ <li>NEON optimization of function HogLiteCreateMask.</li>
+ <li>NEON optimization of function HogLiteFilterSeparable.</li>
+ <li>NEON optimization of function HogLiteCompressFeatures.</li>
+ <li>NEON optimization of function HogLiteResizeFeatures.</li>
+ <li>NEON optimization of function HogLiteFilterFeatures.</li>
+ <li>NEON optimization of function HogLiteExtractFeatures.</li>
+ <li>NEON optimization of function Winograd2x3SetFilter.</li>
+ <li>NEON optimization of function Winograd4x3SetFilter.</li>
+ <li>NEON optimization of function Winograd2x3SetInput.</li>
+ <li>NEON optimization of function Winograd2x3SetOutput.</li>
+ <li>NEON optimization of function SynetAddBias.</li>
+ <li>NEON optimization of function SynetEltwiseLayerForward.</li>
+ <li>NEON optimization of function SynetPoolingForwardMax.</li>
+ <li>NEON optimization of function SynetFusedLayerForward0.</li>
+ <li>NEON optimization of function SynetFusedLayerForward1.</li>
+ <li>NEON optimization of function SynetFusedLayerForward2.</li>
+ <li>NEON optimization of function SynetFusedLayerForward3.</li>
+ <li>NEON optimization of function SynetFusedLayerForward4.</li>
+ <li>NEON optimization of function SynetInnerProductLayerForward.</li>
+ <li>NEON optimization of function SynetLrnLayerCrossChannels.</li>
+ <li>NEON optimization of function SynetPreluLayerForward.</li>
+ <li>NEON optimization of function SynetRestrictRange.</li>
+ <li>NEON optimization of function SynetScaleLayerForward.</li>
+ <li>NEON optimization of function SynetSoftmaxLayerForward.</li>
+ <li>NEON optimization of function ConvolutionForward.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>AVX, AVX2 and AVX-512F optimizations of function ConvolutionForward.</li>
+ <li>SSE, AVX, AVX2 and AVX-512F optimizations of function Resizer.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in AVX-512BW optimization of function ChangeColors.</li>
+ <li>Error in AVX-512BW optimization of function NormalizeHistogram.</li>
+ <li>Error in AVX-512F optimization of function NeuralConvolutionForward.</li>
+ <li>Error in NEON optimization of function Uint8ToFloat32.</li>
+ <li>Error in NEON optimization of function SquaredDifferenceSum16f.</li>
+ <li>Error in SSE version of functions GetFlushToZero.</li>
+ <li>Error in Base implementation of function SynetFusedLayerForward0.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function BgraToYuva420p.</li>
+ <li>Tests for verifying NEON optimization of of function NeuralSigmoid.</li>
+ <li>Tests for verifying NEON optimization of of function NeuralTanh.</li>
+ <li>Tests for verifying NEON optimization of of function NeuralPow.</li>
+ <li>Tests for verifying NEON optimization of of function Fill32f.</li>
+ <li>Tests for verifying NEON optimization of of function AlphaFilling.</li>
+ <li>Tests for verifying NEON optimization of of function CosineDistance16f.</li>
+ <li>Tests for verifying NEON optimization of of function CosineDistance32f.</li>
+ <li>Tests for verifying NEON optimization of of function Gemm32fNN.</li>
+ <li>Tests for verifying NEON optimization of of function Gemm32fNT.</li>
+ <li>Tests for verifying NEON optimization of of function FillPixel.</li>
+ <li>Tests for verifying NEON optimization of of function ReduceColor2x2.</li>
+ <li>Tests for verifying NEON optimization of of function BayerToBgra.</li>
+ <li>Tests for verifying NEON optimization of of function BayerToBgr.</li>
+ <li>Tests for verifying NEON optimization of of function TransformImage.</li>
+ <li>Tests for verifying NEON optimization of of function BgraToYuva420p.</li>
+ <li>Tests for verifying NEON optimization of of function Yuva420pToBgra.</li>
+ <li>Tests for verifying NEON optimization of of function Resizer.</li>
+ <li>Tests for verifying NEON optimization of of function HogLiteFindMax7x7.</li>
+ <li>Tests for verifying NEON optimization of of function HogLiteCreateMask.</li>
+ <li>Tests for verifying NEON optimization of of function HogLiteFilterSeparable.</li>
+ <li>Tests for verifying NEON optimization of of function HogLiteCompressFeatures.</li>
+ <li>Tests for verifying NEON optimization of of function HogLiteResizeFeatures.</li>
+ <li>Tests for verifying NEON optimization of of function HogLiteFilterFeatures.</li>
+ <li>Tests for verifying NEON optimization of of function HogLiteExtractFeatures.</li>
+ <li>Tests for verifying NEON optimization of of function Winograd2x3SetFilter.</li>
+ <li>Tests for verifying NEON optimization of of function Winograd4x3SetFilter.</li>
+ <li>Tests for verifying NEON optimization of of function Winograd2x3SetInput.</li>
+ <li>Tests for verifying NEON optimization of of function Winograd2x3SetOutput.</li>
+ <li>Tests for verifying NEON optimization of of function SynetAddBias.</li>
+ <li>Tests for verifying NEON optimization of of function SynetEltwiseLayerForward.</li>
+ <li>Tests for verifying NEON optimization of of function SynetPoolingForwardMax.</li>
+ <li>Tests for verifying NEON optimization of of function SynetFusedLayerForward0.</li>
+ <li>Tests for verifying NEON optimization of of function SynetFusedLayerForward1.</li>
+ <li>Tests for verifying NEON optimization of of function SynetFusedLayerForward2.</li>
+ <li>Tests for verifying NEON optimization of of function SynetFusedLayerForward3.</li>
+ <li>Tests for verifying NEON optimization of of function SynetFusedLayerForward4.</li>
+ <li>Tests for verifying NEON optimization of of function SynetInnerProductLayerForward.</li>
+ <li>Tests for verifying NEON optimization of of function SynetLrnLayerCrossChannels.</li>
+ <li>Tests for verifying NEON optimization of of function SynetPreluLayerForward.</li>
+ <li>Tests for verifying NEON optimization of of function SynetRestrictRange.</li>
+ <li>Tests for verifying NEON optimization of of function SynetScaleLayerForward.</li>
+ <li>Tests for verifying NEON optimization of of function SynetSoftmaxLayerForward.</li>
+ <li>Tests for verifying NEON optimization of of function ConvolutionForward.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error (at 32-bit OS) in test of function HogLiteFindMax7x7.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R074">February 1, 2019 (version 4.2.74)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE, AVX and AVX-512F optimizations of function Winograd2x3SetFilter(NHWC mode).</li>
+ <li>Base implementation, SSE, AVX and AVX-512F optimizations of function Winograd4x3SetFilter(NHWC mode).</li>
+ <li>Base implementation, SSE, AVX and AVX-512F optimizations of function Winograd2x3SetInput(NHWC mode).</li>
+ <li>Base implementation, SSE, AVX and AVX-512F optimizations of function Winograd2x3SetOutput(NHWC mode).</li>
+ <li>Parameter gemm (a pointer to external function of matrix multiplication) in function ConvolutionInit.</li>
+ <li>Choise of the best gemm function in runtime.</li>
+ <li>SIMD_RUNTIME_GEMM_STATISTIC macro (annotation of runtime choise of gemm).</li>
+ <li>Base implementation, SSE, AVX, AVX2 and AVX-512F optimizations of function SynetPoolingForwardMax.</li>
+ <li>Base implementation, SSE, AVX and AVX-512F optimizations of function FusedLayerForward4</li>
+ <li>Base implementation, SSE2, AVX2 and AVX-512F optimizations of function SynetSoftmaxForward.</li>
+ <li>Base implementation, SSE2, AVX2 and AVX-512BW optimizations of function Yuva420pToBgra.</li>
+ <li>Base implementation, SSSE3 optimization of function TransformImage.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE, AVX, AVX2 and AVX-512F optimizations of function ConvolutionForward.</li>
+</ul>
+<h5>Removing</h5>
+<ul>
+ <li>Function Winograd2x3iSetInput.</li>
+ <li>Function Winograd2x3iSetOutput.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in AVX-512F optimization of function ConvolutionDirectHwcConvolutionBiasActivationDefault.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function Winograd2x3SetFilter (NHWC mode).</li>
+ <li>Tests for verifying functionality of function Winograd4x3SetFilter (NHWC mode).</li>
+ <li>Tests for verifying functionality of function Winograd2x3SetInput (NHWC mode).</li>
+ <li>Tests for verifying functionality of function Winograd2x3SetOutput (NHWC mode).</li>
+ <li>Printing of internal performance statistic.</li>
+ <li>Tests for verifying functionality of function SynetPoolingForwardMax.</li>
+ <li>Tests for verifying functionality of function FusedLayerForward4.</li>
+ <li>Tests for verifying functionality of function SynetSoftmaxForward.</li>
+ <li>Tests for verifying functionality of function Yuva420pToBgra.</li>
+ <li>Tests for verifying functionality of function TransformImage.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>The input variable CMAKE_CXX_FLAGS can contain invalid options (-mtune=native, -march=haswell, -mavx, etc.).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+<h3 id="R073">January 2, 2019 (version 4.2.73)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE, AVX and AVX-512F optimizations of function FusedLayerForward3.</li>
+ <li>Base implementation, SSE, AVX and AVX-512F optimizations of function ConvolutionBiasAndActivation(NHWC mode).</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE, AVX, AVX2 and AVX-512F optimizations of function Gemm32fNN.</li>
+ <li>Add output parameter 'internal' to function ConvolutionSetWeight.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Wrong assert condition in AVX-512F optimization of function NeuralRelu.</li>
+ <li>Visual Studio 2017 compiler error (intrinsic _mm512_maskz_loadu_epi8 in Release mode).</li>
+ <li>Crash: reading of unaligned memory in AVX-512BW optimization of function HogLiteFilterFeatures.</li>
+ <li>Performance bug in functions SynetAddBias, SynetFusedLayerForwardX, SynetPreluLayerForward and SynetScaleLayerForward when (count = 1, trans = 1).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function FusedLayerForward3.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/> 
+
+</td> </tr> </table> </center> </body> </html>

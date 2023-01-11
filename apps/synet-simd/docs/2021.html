@@ -1,0 +1,723 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Simd Library Release Notes (2021)</title>
+</head>
+<body> <center><table width=1024><tr><td>
+<a id="HOME"><a>
+<center>
+<img width="200" height="100" src="logo.png">
+<h1>Simd Library Release Notes (2021).</h1>
+<a href="index.html">Home</a> |
+<a href="2022.html">Release Notes</a> | 
+<a href="download.html">Download</a> | 
+<a href="help/index.html">Documentation</a> | 
+<a href="http://github.com/ermig1979/Simd/issues">Issues</a> | 
+<a href="http://github.com/ermig1979/Simd" target="_top">GitHub</a> 
+</center>
+<hr/> 
+</td></tr><tr><td>
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/>
+
+<h3 id="R108">December 1, 2021 (version 4.9.108)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>SSE4.1, AVX2, AVX-512F, AVX-512BW  optimizations of class ResizerNearest.</li>
+ <li>Add SimdResizeMethodNearestPytorch to SimdResizeMethodType enumeration.</li>
+ <li>Add parameter BackgroundStatUpdateTime to Motion Detector.</li>
+ <li>MotionDetector performance optimization (case of falling star).</li>
+ <li>16-bit UYVY image format in View.</li>
+ <li>Base implementation of function UyvyToBgr.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512F optimizations of function SynetSwish32f.</li>
+ <li>SimdConvolutionActivationSwish item of SimdConvolutionActivationType enumeration.</li>
+ <li>Swish activation function to Base implementation, SSE2, AVX2, AVX-512F optimizations of SynetConvolution32f framework.</li>
+ <li>Swish activation function to Base implementation, SSE2, AVX2, AVX-512F optimizations of SynetDeconvolution32f framework.</li>
+ <li>Swish activation function to Base implementation, SSE2, AVX2, AVX-512F optimizations of SynetMergedConvolution32f framework.</li>
+ <li>Swish activation function to Base implementation, SSE4.1, AVX2, AVX-512BW, AVX-512VNNI optimizations of SynetConvolution8i framework.</li>
+ <li>Swish activation function to Base implementation, SSE4.1, AVX2, AVX-512BW, AVX-512VNNI optimizations of SynetMergedConvolution8i framework.</li>
+ <li>SimdYuvType enumeration.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512BW optimizations of function Yuv444pToBgraV2.</li>
+ <li>Function Simd::Resize supports images with 16-bit channel size.</li>
+ <li>Base implementation function Yuv420pToBgraV2.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Refactoring of SimdResizeMethodType enumeration.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Stack corruption in function Simd::Avx2::JpegWriteBlockSubs.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function UyvyToBgr.</li>
+ <li>Tests for verifying functionality of function SynetSwish32f.</li>
+ <li>Tests for verifying functionality of function Yuv444pToBgraV2.</li>
+ <li>Tests for verifying functionality of function Yuv420pToBgraV2.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Wrong compiler options correction in Cmake.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R107">November 1, 2021 (version 4.9.107)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Internal class Holder to replace std::unique_ptr for old compilers without support of C++11 standard.</li>
+ <li>SimdBayerLayoutType enumeration.</li>
+ <li>Base implementation of class ResizerNearest.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error when defined macro SIMD_SSE2_DISABLE.</li>
+ <li>Compiler error when defined macro SIMD_NEON_DISABLE.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>SIMD_ROOT Cmake parameter.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R106">October 1, 2021 (version 4.9.106)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE2, AVX, AVX-512F, NEON optimizations of function SynetHardSigmoid32f.</li>
+ <li>SimdConvolutionActivationHardSigmoid item of SimdConvolutionActivationType enumeration.</li>
+ <li>HardSigmoid activation function to Base implementation, SSE2, AVX, AVX2, AVX-512F, NEON optimizations of SynetConvolution32f framework.</li>
+ <li>HardSigmoid activation function to Base implementation, SSE2, AVX, AVX2, AVX-512F, NEON optimizations of SynetDeconvolution32f framework.</li>
+ <li>HardSigmoid activation function to Base implementation, SSE2, AVX, AVX2, AVX-512F, NEON optimizations of SynetMergedConvolution32f framework.</li>
+ <li>NEON optimizations of SynetMergedConvolution32fDc class.</li>
+ <li>NEON optimizations of SynetMergedConvolution32fCd class.</li>
+ <li>NEON optimizations of SynetInnerProduct32fGemm class.</li>
+ <li>NEON optimizations of SynetInnerProduct32fProd class.</li>
+ <li>HardSigmoid activation function to Base implementation, SSE41, AVX2, AVX-512BW, AVX-512VNNI, NEON optimizations of SynetConvolution8i framework.</li>
+ <li>HardSigmoid activation function to Base implementation, SSE41, AVX2, AVX-512BW, AVX-512VNNI optimizations of SynetMergedConvolution8i framework.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error in file SimdInit.h (CLang, Windows).</li>
+</ul>
+<h5>Removing</h5>
+<ul>
+ <li>Remove including SimdConfig.h in SimdLib.h.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetHardSigmoid32f.</li>
+ <li>'-pi' test parameter (to print internal performance statistics of Simd Library to console).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R105">September 13, 2021 (version 4.9.105)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>AVX2 optimizations of function TransformImage (case of Gray8, Uv16, Bgr24 for Rotate180, TransposeRotate90).</li>
+ <li>Method Frame::Clone with region parameter.</li>
+ <li>Method View::Clone with region parameter.</li>
+ <li>AVX2 optimizations of function TransformImage (case of Gray8, Uv16, Bgr24, Bgra32 for Rotate90, Rotate270, TransposeRotate0, TransposeRotate180).</li>
+ <li>AVX-512BW optimizations of function TransformImage (case of Gray8, Uv16, Bgra32 for Rotate180, TransposeRotate90).</li>
+ <li>AVX-512BW optimizations of function TransformImage (case of Bgra32 for Rotate90, Rotate270, TransposeRotate0, TransposeRotate180).</li>
+ <li>AVX-512BW optimizations of function TransformImage (case of Uv16 for Rotate90, Rotate270, TransposeRotate0, TransposeRotate180).</li>
+ <li>AVX-512BW optimizations of function TransformImage (case of Gray8 for Rotate90, Rotate270, TransposeRotate0, TransposeRotate180).</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512BW, NEON optimizations of function AlphaBlendingUniform.</li>
+ <li>AVX-512BW optimizations of function TransformImage (case of Bgr24 for Rotate180, TransposeRotate90, Rotate90, Rotate270, TransposeRotate0, TransposeRotate180).</li>
+ <li>Resize function (with size parameter).</li>
+ <li>Move constructor of View structure.</li>
+ <li>Move operator of View structure.</li>
+ <li>Clear method of Frame structure.</li>
+ <li>Swap method of Frame structure.</li>
+ <li>Move constructor of Frame structure.</li>
+ <li>Move operator of Frame structure.</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function AlphaBlendingUniform.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R104">August 3, 2021 (version 4.9.104)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Rgba32 format in Frame structure.</li>
+ <li>Rgba32 format in Convert function (for frames).</li>
+ <li>SSE4.1 optimizations of function Float32ToFloat16.</li>
+ <li>SSE4.1 optimizations of function Float16ToFloat32.</li>
+ <li>AVX2 optimizations of function TransformImage (case of Bgra32 for Rotate180, TransposeRotate90).</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE2, AVX, AVX2, AVX-512F and NEON optimizations of class SynetConvolution32fNhwcDirect (case of fixed kernels).</li>
+ <li>Reducing of compilation time and binaries size of class SynetConvolution32f.</li>
+ <li>Reducing of compilation time and binaries size of class SynetDeconvolution32f.</li>
+ <li>Reducing of compilation time and binaries size of class SynetMergedConvolution32f.</li>
+ <li>Reducing of compilation time and binaries size of class SynetConvolution8i.</li>
+ <li>Reducing of compilation time and binaries size of class SynetMergedConvolution8i.</li>
+ <li>SSE41 optimizations of function TransformImage (case of Bgr24, Bgra32 for Rotate90, Rotate270, TransposeRotate180).</li>
+ <li>SSE41 optimizations of function TransformImage (case of Uv16 for Rotate90, Rotate270, TransposeRotate0, TransposeRotate180).</li>
+ <li>SSE41 optimizations of function TransformImage (case of Gray8 for Rotate90, Rotate270, TransposeRotate0, TransposeRotate180).</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error in file SimdAvx512bwResizer.cpp (GCC 5.4.0).</li>
+ <li>Compiler error in file SimdAvx512bwBgraToBgr.cpp (MSVS-2017).</li>
+ <li>Compiler error in file SimdInit.h (CLang, Windows).</li>
+ <li>Error in AVX2 and AVX-512BW optimizations of functions CosineDistancesMxNa16f and CosineDistancesMxNp16f (functions may return small negative values).</li>
+ <li>Error in function Base::DetectionLoadA (it generates exception instead of returns NULL).</li>
+ <li>Error in SSE2, AVX, AVX2, AVX-512F and NEON optimizations of class SynetDeconvolution32fNhwcDirect2x2.</li>
+</ul>
+<h5>Replacing</h5>
+<ul>
+ <li>Replace SSE3 optimizations to SSE4.1 for function Gemm32fNT.</li>
+ <li>Replace SSE3 optimizations to SSE4.1 for function SynetConvolution32fInit.</li>
+ <li>Replace SSE3 optimizations to SSE4.1 for function NeuralAddConvolution2x2Sum.</li>
+ <li>Replace SSE3 optimizations to SSE4.1 for function NeuralAddConvolution3x3Sum.</li>
+ <li>Replace SSE3 optimizations to SSE4.1 for function NeuralAddConvolution4x4Sum.</li>
+ <li>Replace SSE3 optimizations to SSE4.1 for function NeuralAddConvolution5x5Sum.</li>
+ <li>Replace SSE3 optimizations to SSE4.1 for function NeuralConvolutionForward.</li>
+ <li>Replace SSE4.2 optimizations to SSE4.1 for function Crc32c.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function AlphaBlending.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function AlphaFilling.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function AlphaPremultiply.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BayerToBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgraToBayer.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgraToBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgraToRgb.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgraToRgba.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgraToYuv420p.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgraToYuv422p.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgraToYuva420p.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgrToBayer.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgrToBgra.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function RgbToBgra.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgrToGray.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function RgbToGray.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgrToRgb.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function TransformImage.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgrToYuv420p.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgrToYuv422p.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function BgrToYuv444p.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function DeinterleaveBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function DeinterleaveBgra.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function GaussianBlur3x3.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function GrayToBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function InterleaveBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function InterleaveBgra.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Yuv420pToBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Yuv422pToBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Yuv444pToBgr.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Yuv420pToRgb.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Yuv422pToRgb.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Yuv444pToRgb.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Laplace.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function LaplaceAbs.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function LaplaceAbsSum.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function MeanFilter3x3.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function ReduceColor2x2.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function ReduceGray2x2.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function ReduceGray4x4.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Reorder16bit.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Reorder32bit.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function Reorder64bit.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function ResizeBilinear.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SobelDx.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SobelDxAbs.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SobelDxAbsSum.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SobelDy.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SobelDyAbs.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SobelDyAbsSum.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function ContourMetrics.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function ContourMetricsMasked.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SquaredDifferenceSum.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function SquaredDifferenceSumMasked.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for function TextureBoostedSaturatedGradient.</li>
+ <li>Replace SSSE3 optimizations to SSE4.1 for class ResizerByteBilinear.</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Colorized annotation in console logging.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Performance report generation to text file.</li>
+ <li>Thread ID annotation in console logging.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>SIMD_INT8_DEBUG cmake option.</li>
+</ul>
+<h5>Removing</h5>
+<ul>
+ <li>Separate support of SSE3 extension (it has been moved into SSE4.1).</li>
+ <li>Separate support of SSE4.2 extension (it has been moved into SSE4.1).</li>
+ <li>Separate support of SSSE3 extension (it has been moved into SSE4.1).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R103">July 1, 2021 (version 4.8.103)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW and NEON optimizations of class ResizerShortBilinear.</li>
+ <li>Base implementation, AVX2, AVX-512BW and NEON optimizations of function VectorNormNa16f.</li>
+ <li>Base implementation, AVX2, AVX-512BW and NEON optimizations of function VectorNormNp16f.</li>
+ <li>Parameter of ROI mask in Motion::Model.</li>
+ <li>SSE2, AVX-512BW and NEON optimizations of function AbsDifference.</li>
+ <li>NEON optimizations of function AlphaUnpremultiply.</li>
+ <li>NEON optimizations of function AlphaPremultiply.</li>
+ <li>NEON optimizations of function ValueSquareSums.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Performance of SSE4.1, AVX, AVX2, AVX-512F optimizations of SynetInnerProduct32fGemm class.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Linker warning in file SimdImageLoad.h (MSVS).</li>
+</ul>
+<h5>Replacing</h5>
+<ul>
+ <li>Replace SSE optimizations to SSE2 for function SvmSumLinear.</li>
+ <li>Replace SSE optimizations to SSE2 for function Fill32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function CosineDistance32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function DifferenceSum32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function SquaredDifferenceKahanSum32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function HogDeinterleave.</li>
+ <li>Replace SSE optimizations to SSE2 for function HogFilterSeparable.</li>
+ <li>Replace SSE optimizations to SSE2 for class ResizerFloatBilinear.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddVectorMultipliedByValue.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddVector.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddVector.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAdaptiveGradientUpdate.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralDerivativeRelu.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralDerivativeSigmoid.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralDerivativeTanh.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralRoughSigmoid.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralRoughSigmoid2.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralRoughTanh.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralUpdateWeights.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralPooling1x1Max3x3.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralPooling2x2Max2x2.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralPooling2x2Max3x3.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetPoolingForwardAverage.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetPoolingForwardMax32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution2x2Forward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution3x3Forward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution4x4Forward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution5x5Forward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution2x2Backward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution3x3Backward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution4x4Backward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution5x5Backward.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution2x2Sum.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution3x3Sum.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution4x4Sum.</li>
+ <li>Replace SSE optimizations to SSE2 for function NeuralAddConvolution5x5Sum.</li>
+ <li>Replace SSE optimizations to SSE2 for function Gemm32fNN.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetFusedLayerForward0.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetFusedLayerForward1.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetFusedLayerForward2.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetFusedLayerForward3.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetFusedLayerForward4.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetFusedLayerForward8.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetFusedLayerForward9.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetReorderImage.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetReorderFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetAddBias.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetEltwiseLayerForward.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetInnerProductLayerForward.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetShuffleLayerForward.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetHswish32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetPreluLayerForward.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetRelu32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetRestrictRange32f.</li>
+ <li>Replace SSE optimizations to SSE2 for function SynetScaleLayerForward.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel1x3Block1x4SetFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel1x3Block1x4SetInput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel1x3Block1x4SetOutput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel1x5Block1x4SetFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel1x5Block1x4SetInput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel1x5Block1x4SetOutput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel2x2Block2x2SetFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel2x2Block2x2SetInput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel2x2Block2x2SetOutput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel2x2Block4x4SetFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel2x2Block4x4SetInput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel2x2Block4x4SetOutput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block2x2SetFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block2x2SetInput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block2x2SetOutput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block3x3SetFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block3x3SetInput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block3x3SetOutput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block4x4SetFilter.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block4x4SetInput.</li>
+ <li>Replace SSE optimizations to SSE2 for function WinogradKernel3x3Block4x4SetOutput.</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests to verify functionality function of VectorNormNa16f.</li>
+ <li>Tests to verify functionality function of VectorNormNp16f.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Removing</h5>
+<ul>
+ <li>Separate support of SSE extension (it has been moved into SSE2).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R102">June 2, 2021 (version 4.7.102)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of function ValueSquareSums.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Performance of AVX2, AVX-512F and NEON optimizations of SynetConvolution32fGemmNN class.</li>
+ <li>Performance of Neural::FullyConnectedLayer::Forward method.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in class SynetMergedConvolution32fDc (large weights case).</li>
+ <li>Compiler error in file SimdAvx2SynetConversion.cpp (MSVS-2015, Win32).</li>
+ <li>Error in SSSE3 optimization of ImageTransform function.</li>
+ <li>Compiler error in file SimdImageSaveJpeg.h (Clang, Mac mini).</li>
+ <li>Compiler warnings (Clang).</li>
+ <li>Error in function ImagePngLoader::ReadTransparency (test tbbn0g04.png).</li>
+ <li>Error in Base implementation, SSE4.1 optimization of class ImagePngLoader (test basn0g16.png).</li>
+ <li>Error in SSE4.1 optimization of class ImagePngLoader (test s02i3p01.png).</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests to verify functionality function of ValueSquareSums.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Header of performance report table.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compiler error in file TestFile.h (Clang, Mac mini).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R101">May 3, 2021 (version 4.7.101)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Parameter a in function DeinterleaveBgra can be NULL.</li>
+ <li>Simd::DeinterleaveBgra C++ wrapper.</li>
+ <li>Simd::DeinterleaveRgb C++ wrapper.</li>
+ <li>Simd::DeinterleaveRgba C++ wrappers.</li>
+ <li>Method View::Load (from memory).</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of ImageJpegSaver class.</li>
+ <li>Base implementation of ImageJpegLoader class.</li>
+ <li>Base implementation of ImagePngLoader class.</li>
+ <li>NEON optimizations of ImagePngSaver class.</li>
+ <li>SIMD_SYNET_DISABLE macro.</li>
+ <li>Base implementation, AVX2, AVX-512BW, NEON optimizations of function СosineDistancesMxNp16f.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in NEON optimizations of function СosineDistancesMxNa16f.</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Parameter '-ri' to set real image name in runtime.</li>
+ <li>Tests to verify functionality function of СosineDistancesMxNp16f.</li>
+ <li>Special tests for verifying functionality of function ImageLoadFromMemory.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in saving of output log.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>Real images to test encoding/decoding algorithms.</li>
+ <li>SIMD_SYNET cmake option.</li>
+ <li>SIMD_HIDE cmake option.</li>
+</ul>
+<h5>Removing</h5>
+<ul>
+ <li>Project files of Microsoft Visual Studio 2017 (for Android).</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>New features</h5>
+<ul>
+ <li>Description of Cmake parameters.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R100">April 1, 2021 (version 4.6.100)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of ImagePngSaver class.</li>
+ <li>SynetInnerProduct32f framework.</li>
+ <li>Base implementation, SSE4.1, AVX, AVX2, AVX-512F optimizations of SynetInnerProduct32fGemm class.</li>
+ <li>Base implementation, SSE4.1, AVX, AVX2, AVX-512F optimizations of SynetInnerProduct32fProd class.</li>
+ <li>Rgba32 format in View structure.</li>
+ <li>Pixel::Rgba32 structure.</li>
+ <li>Simd::RgbToBgr C++ wrapper.</li>
+ <li>Simd::GrayToRgb C++ wrapper.</li>
+ <li>Simd::GrayToRgba C++ wrapper.</li>
+ <li>Simd::BgrToRgba C++ wrapper.</li>
+ <li>Simd::RgbaToRgb C++ wrapper.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512BW, NEON optimizations of function RgbaToGray.</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW, NEON optimizations of function BgraToRgba.</li>
+ <li>Simd::RgbToRgba C++ wrapper.</li>
+ <li>Simd::RgbaToBgra C++ wrapper.</li>
+ <li>Rgba32 format in Convert function.</li>
+ <li>Rgba32 format in function ImageSave.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Reduce memory allocations in Simd::ContourDetector.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Assert in function Avx::SynetMergedConvolution32fCdc::SynetMergedConvolution32fCdc.</li>
+ <li>Assert in function Avx::SynetMergedConvolution32fCd::SynetMergedConvolution32fCd.</li>
+ <li>Assert in function Avx::SynetMergedConvolution32fDc::SynetMergedConvolution32fDc.</li>
+ <li>Freezes in function SynetConvolution32fNhwcDirect::OldReorderWeight (ARMv7 architecture).</li>
+ <li>Freezes in file SimdGemm.h (ARMv7 architecture).</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of SynetInnerProduct32f framework.</li>
+ <li>Performance report use milliseconds or microseconds (choosing in runtime).</li>
+ <li>Special test to verify functionality function of Simd::Convert.</li>
+ <li>Tests to verify functionality function of RgbaToGray.</li>
+ <li>Tests to verify functionality function of BgraToRgba.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Crash in test BgrToRgbAutoTest.</li>
+ <li>Error in test of SynetMergedConvolution8i.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>Removing</h5>
+<ul>
+ <li>Remove project files of Microsoft Visual Studio 2013.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R099">March 1, 2021 (version 4.6.99)</h3> 
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>SimdImageFileType enumeration.</li>
+ <li>ImageSaveToFile function.</li>
+ <li>ImageSaveToMemory function.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePgmTxtSaver class.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePgmBinSaver class.</li>
+ <li>Change order of parameters in function BgrToRgb.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePpmBinSaver class.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePpmTxtSaver class.</li>
+ <li>Additional parameters in function View::Save.</li>
+ <li>Method View::Release.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePgmTxtLoader class.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePgmBinLoader class.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePpmTxtLoader class.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, NEON optimizations of ImagePpmBinLoader class.</li>
+ <li>Additional parameter in function View::Load.</li>
+ <li>Base implementation of Crc32 function.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Crash in Simd::Detection on Python (using of std::unique_ptr).</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Possibility to write output video in UseFaceDetection.cpp example.</li>
+ <li>Test parameter '-o=' to write annotated output video.</li>
+ <li>Tests for verifying functionality of function ImageSaveToFile.</li>
+ <li>Tests for verifying functionality of function ImageSaveToMemory.</li>
+ <li>Tests for verifying functionality of function ImageLoadFromMemory.</li>
+ <li>Tests for verifying functionality of function Crc32.</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>New features</h5>
+<ul>
+ <li>Example of use into description of Font.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Errors in Simd Library description.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R098">February 1, 2021 (version 4.6.98)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Add parameter epsilon to GaussianBlur engine.</li>
+ <li>Add function SynetConvolution32fInfo.</li>
+ <li>Add function SynetConvolution8iInfo.</li>
+ <li>Add function SynetDeconvolution32fInfo.</li>
+ <li>Add function SynetMergedConvolution32fInfo.</li>
+ <li>Add function SynetMergedConvolution8iInfo.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Performance of SynetConvolution8iNhwcDirect class (case of horizontal padding of small image).</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>GaussianBlur engine parameter from radius to sigma.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in GaussianBlur engine (case of small images).</li>
+ <li>Performance degradation of AVX-512VNNI optimization of SynetConvolution8i framework.</li>
+ <li>Performance degradation of AVX-512VNNI optimization of SynetMergedConvolution8i framework.</li>
+ <li>Error in GaussianBlur engine (wrong processing of last rows).</li>
+ <li>Error in trajectory averaging algorithm in Motion::Detector.</li>
+</ul>
+
+<h4>Tests</h4>
+<h5>New features</h5>
+<ul>
+ <li>Possibility to write output video in UseMotionDetector.cpp example.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in files: TestVideo.cpp, UseMotionDetector.cpp, UseFaceDetector.cpp (MSVS-2019, OpenCV enabled).</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>Improving</h5>
+<ul>
+ <li>Description of GaussianBlur engine.</li>
+ <li>Description of Motion::Detector.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New feature</h5>
+<ul>
+ <li>Ocv.prop.default for Visual Studio 2019.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Cmake parameter from LIBRARY to SIMD_SHARED.</li>
+ <li>Cmake parameter from CHECK_VERSION to SIMD_GET_VERSION.</li>
+ <li>Cmake parameter from TOOLCHAIN to SIMD_TOOLCHAIN.</li>
+ <li>Cmake parameter from TARGET to SIMD_TARGET.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R097">January 4, 2021 (version 4.6.97)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE2, AVX2, AVX-512F and NEON optimizations of function SynetMish32f.</li>
+ <li>Support of Mish activation function in SynetConvolution32f framework.</li>
+ <li>Support of Mish activation function in SynetMergedConvolution32f framework.</li>
+ <li>Support of Mish activation function in SynetConvolution8i framework.</li>
+ <li>Support of Mish activation function in SynetMergedConvolution8i framework.</li>
+ <li>Support of Mish activation function in SynetDeconvolution32f framework.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW and NEON optimizations of GaussianBlur engine.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>AVX-512F optimization of SynetConvolution32fNhwcDirect class.</li>
+ <li>AVX-512F optimization of SynetConvolution32fGemmNN class.</li>
+ <li>AVX-512F optimization of SynetConvolution32fWinograd class.</li>
+ <li>AVX-512F optimization of function Gemm32fNN.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in Base implementation of SynetMergedConvolution32f (type=CDC, add=1).</li>
+ <li>Error in function SimdAlignment.</li>
+ <li>Visual Studio 2017 compiler error in files SimdAvx512bwSynet.cpp, SimdAvx512bwSynetScale.cpp, SimdAvx512bwAlphaBlending.cpp.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetMish32f.</li>
+ <li>Tests for verifying functionality of GaussianBlur engine.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/> 
+
+</td> </tr> </table> </center> </body> </html>

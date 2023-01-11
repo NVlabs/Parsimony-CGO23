@@ -1,0 +1,488 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Simd Library Release Notes (2020)</title>
+</head>
+<body> <center><table width=1024><tr><td>
+<a id="HOME"><a>
+<center>
+<img width="200" height="100" src="logo.png">
+<h1>Simd Library Release Notes (2020).</h1>
+<a href="index.html">Home</a> |
+<a href="2022.html">Release Notes</a> | 
+<a href="download.html">Download</a> | 
+<a href="help/index.html">Documentation</a> | 
+<a href="http://github.com/ermig1979/Simd/issues">Issues</a> | 
+<a href="http://github.com/ermig1979/Simd" target="_top">GitHub</a> 
+</center>
+<hr/> 
+</td></tr><tr><td>
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/>
+
+<h3 id="R096">December 1, 2020 (version 4.6.96)</h3>
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation of function AveragingBinarizationV2.</li>
+ <li>SSE4.1, AVX2, AVX-512BW optimizations of function AlphaUnpremultiply.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE2, AVX2, AVX-512BW and NEON optimizations of function MedianFilterSquare5x5.</li>
+ <li>SSE2, AVX2, AVX-512F optimizations of function SynetSoftmaxLayerForward.</li>
+ <li>Reducing of number of calling function CpuSocketNumber at initialization of Simd.</li>
+ <li>Reducing of number of calling function CpuCoreNumber at initialization of Simd.</li>
+ <li>Reducing of number of calling function CheckBit at initialization of Simd.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Compilation error in file SimdNeonSynetConvolution8i.cpp.</li>
+ <li>Infinite loop in SynetConvolution32fNhwcDirect::OldReorderWeight (on Celeron CPU).</li>
+ <li>Crash in SimdRuntime.h (on Celeron CPU).</li>
+ <li>Crash in SimdGemm.h (on Celeron CPU).</li>
+ <li>Function SimdSynetSpecifyTensorFormat returns incorrect value.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function AveragingBinarizationV2.</li>
+ <li>Parameter '-lc' to litter CPU cache between tests run.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>MSVS projects can be used from external solution.</li>
+</ul>
+<h5>Removing</h5>
+<ul>
+ <li>Supporting of MSA(MIPS).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R095">November 4, 2020 (version 4.6.95)</h3>
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>AVX2, AVX-512BW and AVX-512VNNI optimizations of SynetMergedConvolution8iCdc class.</li>
+ <li>AVX2, AVX-512BW and AVX-512VNNI optimizations of SynetMergedConvolution8iCd class.</li>
+ <li>AVX2, AVX-512BW and AVX-512VNNI optimizations of SynetMergedConvolution8iDc class.</li>
+ <li>SSE4.1, AVX2, AVX-512BW optimizations of function SynetConvert8uTo32f.</li>
+ <li>Base implementation, SSE2, SSSE3 AVX2, AVX-512BW optimizations of function AlphaPremultiply.</li>
+ <li>Base implementation of function AlphaUnpremultiply.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>GCC v10 compilation error in file SimdGemm.h.</li>
+ <li>Error in IECompatible method of SynetMergedConvolution8i.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function AlphaPremultiply.</li>
+ <li>Tests for verifying functionality of function AlphaUnpremultiply.</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>There are no references to C++ wrappers in description of API functions.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R094">October 1, 2020 (version 4.6.94)</h3>
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation of SynetMergedConvolution8i class.</li>
+ <li>Base implementation of function SynetConvert8uTo32f.</li>
+ <li>Base implementation and SSE4.1 optimizations of SynetMergedConvolution8iCdc class.</li>
+ <li>Base implementation and SSE4.1 optimizations of SynetMergedConvolution8iCd class.</li>
+ <li>Base implementation and SSE4.1 optimizations of SynetMergedConvolution8iDc class.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Performance degradation in class Convolution32fNhwcDirect (weights size >> L3 cache).</li>
+ <li>Performance degradation in class Convolution32fGemmNN (weights size >> L3 cache).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of SynetMergedConvolution8i class.</li>
+ <li>Tests for verifying functionality of function SynetConvert8uTo32f.</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>Improving</h5>
+<ul>
+ <li>Improve structuring of Synet documentation.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R093">September 1, 2020 (version 4.6.93)</h3>
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Full support of SimdConvolutionActivationType in SynetConvolution8i class.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW, AVX-512VNNI optimizations of SynetConvolution8iNhwcDepthwise class.</li>
+ <li>Extend class MergedConvolution32f (2 merged convolutions).</li>
+ <li>Base implementation, SSE2, AVX, AVX2, AVX-512F optimizations of MergedConvolution32fCd class.</li>
+ <li>Base implementation, SSE2, AVX, AVX2, AVX-512F optimizations of MergedConvolution32fDc class.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Reducing of compilation time and assembled size of Simd Library.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>Class MergedConvolution32f to MergedConvolution32fCdc.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Performance degradation in class Convolution32fNhwcDirect (dilation != 1).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of class MergedConvolution32f (2 merged convolutions).</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R092">August 3, 2020 (version 4.6.92)</h3>
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of function SynetAdd8i.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of function SynetInnerProduct8i.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Reducing of compilation time and assembled size of Simd Library.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in SSE4.1, AVX2, AVX-512BW optimizations of SynetScale8i class (wrong alignment check).</li>
+ <li>Error in performance annotation of SynetConvolution8i class.</li>
+ <li>Compiler error in file SimdBaseSynetConvolution8i.cpp (for old compilers).</li>
+ <li>Compiler errors in files SimdAvx2Synet.cpp, SimdAvx2SynetScale.cpp (WIN32, MSVS).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetAdd8i.</li>
+ <li>Tests for verifying functionality of function SynetInnerProduct8i.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R091">July 1, 2020 (version 4.6.91)</h3>
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Extend SimdSynetCompatibilityType enumeration.</li>
+ <li>Add support of SimdSynetCompatibility8iNarrowed to Base implementation, SSE2, AVX2, AVX-512BW and NEON optimizations of function SynetConvert32fTo8u.</li>
+ <li>Add support of SimdSynetCompatibility8iNarrowed to Base implementation, SSE4.1, AVX2, AVX-512BW, AVX-512VNNI and NEON optimizations of SynetConvolution8iNhwcDirect class.</li>
+ <li>Add support of SimdConvolutionActivationPrelu to Base implementation, SSE4.1, AVX2, AVX-512BW, AVX-512VNNI and NEON optimizations of SynetConvolution8iNhwcDirect class.</li>
+ <li>Base implementation, SSE4.1, AVX2, AVX-512BW optimizations of SynetScale8i class.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Reducing of size of applications or shared libraries which use Simd as static library.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in class SynetConvolution8i (batch > 1).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of SynetScale8i framework.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R090">June 3, 2020 (version 4.6.90)</h3>
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Rgb24 format in Frame structure.</li>
+ <li>Rgb24 format in Convert function.</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW and NEON optimizations of function RgbToGray.</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW and NEON optimizations of function RgbToBgra.</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW and NEON optimizations of function BgraToRgb.</li>
+ <li>AVX2 optimization of function BgraToBgr.</li>
+ <li>Function LitterCpuCache.</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW and NEON optimizations of function Yuv444pToRgb.</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW and NEON optimizations of function Yuv422pToRgb.</li>
+ <li>Base implementation, SSSE3, AVX2, AVX-512BW and NEON optimizations of function Yuv420pToRgb.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>NEON optimization of function BgrToGray.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in class SynetConvolution8i (group != 1).</li>
+ <li>Wrong assert condition in SSE2, AVX, AVX2, AVX-512F and NEON optimization of class Convolution32fNhwcDirect.</li>
+ <li>Compiler error when SIMD_AVX2_DISABLE macro is uncommented.</li>
+ <li>Int32 overflow in function SynetConvolution8i::SetParams.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function RgbToGray.</li>
+ <li>Tests for verifying functionality of function RgbToBgra.</li>
+ <li>Tests for verifying functionality of function BgraToRgb.</li>
+ <li>Tests for verifying functionality of function Yuv444pToRgb.</li>
+ <li>Tests for verifying functionality of function Yuv422pToRgb.</li>
+ <li>Tests for verifying functionality of function Yuv420pToRgb.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R089">May 4, 2020 (version 4.6.89)</h3>
+
+<h4>Algorithms</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Microsoft Visual Studio 2013 compiler errors in files: SimdSynetConvolution8i.h, SimdSse2SynetConvolution32f.cpp, SimdAvx2Reduce.cpp.</li>
+ <li>Buffer overrun in SSE4.1, AVX2, NEON optimizations of SynetConvolution8iNhwcDirect class.</li>
+ <li>Visual Studio 2017 internal compiler error in function Avx512f::ConvolutionBiasAndActivation (Win32/Release).</li>
+ <li>Compiler error in NEON optimization of class SynetConvolution8iNhwcDirect (ARM, 32-bit).</li>
+ <li>Error in AVX2 optimization of function SynetScaleLayerForward.</li>
+ <li>Error in base implementation of SquaredDifferenceKahanSum32f (Visual Studio 2017).</li>
+ <li>Error in AVX-512BW optimization of class SynetConvolution8iNhwcDirect (Visual Studio 2017/2019, Release).</li>
+ <li>Error in class SynetConvolution32fNhwcDirect (large parameters srcC and dstC).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Microsoft Visual Studio 2013 compiler errors in files: TestTensor.h, TestSynetActivation.cpp.</li>
+ <li>Test report is not generated if output directory is not exists.</li>
+ <li>Error in test SynetConvert32fTo8uAutoTest.</li>
+</ul>
+
+<h4>Infrastructure</h4>
+<h5>New features</h5>
+<ul>
+ <li>Script to test Simd compiled with different version of Microsoft Visual Studio.</li>
+ <li>New structure of Microsoft Visual Studio 2019 project files.</li>
+</ul>
+<h5>Removing</h5>
+<ul>
+ <li>Remove project files of Microsoft Visual Studio 2012.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R088">April 1, 2020 (version 4.6.88)</h3>
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>AVX-512VNNI extension support.</li>
+ <li>AVX2, AVX-512BW, AVX-512VNNI and NEON optimizations of SynetConvolution8iNhwcDirect class.</li>
+ <li>Base implementation and SSE4.1, AVX2 AVX-512BW and NEON optimizations of function SynetPoolingForwardMax8u.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>SynetPoolingForwardMax to SynetPoolingForwardMax32f.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>SSE4.1 optimization of SynetConvolution8iNhwcDirect class.</li>
+ <li>SSE2, AVX, AVX2, AVX-512F and NEON optimizations of SynetConvolution32fNhwcDirect class.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Microsoft Visual Studio 2015 compiler error in function SynetConvert32fTo8u.</li>
+ <li>Degradation of performance of AVX2 code.</li>
+ <li>Microsoft Visual Studio compiler error in function Extract64i (32-bit mode).</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetPoolingForwardMax8u.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/>
+<h3 id="R087">March 2, 2020 (version 4.5.87)</h3>
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Add parameter of bitwise compatibility of function SynetScaleLayerForward and Inference Engine.</li>
+ <li>Add parameter 'type' to function SynetShuffleLayerForward.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512BW amd NEON optimizations of function SynetConvert32fTo8u.</li>
+ <li>SimdSynetCompatibilityType enumeration.</li>
+ <li>Base implementation of SynetConvolution8iGemmNN class.</li>
+ <li>Base implementation and SSE4.1 optimization of SynetConvolution8iNhwcDirect class.</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>SimdSynetConvertImage to SimdSynetReorderImage.</li>
+ <li>SimdSynetConvertFilter to SimdSynetReorderFilter.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>A new commandline test parameter -c - a number of channels in test image for performance testing.</li>
+ <li>A new commandline test parameter -mt - a minimal test execution time (in milliseconds).</li>
+ <li>Tests for verifying functionality of SynetConvolution8i framework.</li>
+ <li>Tests for verifying functionality of function SynetConvert32fTo8u.</li>
+</ul>
+
+<h4>Documentation</h4>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in description of method Detection::LoadStringXml.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+<h3 id="R086">February 3, 2020 (version 4.5.86)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>SimdResizeMethodInferenceEngineInterp method in Resizer framework.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Performance of Convolution32f framework (NHWC format, kernel=3x3, stride=1x1, large H and W).</li>
+ <li>Performance of AVX-512F and NEON optimizations of function GemmPackA.</li>
+ <li>Performance of Convolution32f framework (NHWC format, GemmNN method).</li>
+ <li>Performance of SSE2, AVX, AVX2, AVX-512F and NEON optimizations of Convolution32f framework (NHWC format, NhwcDirect method, kernel=1x1).</li>
+ <li>Performance of AVX-512F optimization of MergedConvolution32f framework (input convolution).</li>
+ <li>Performance of AVX2 and AVX-512F optimizations of MergedConvolution32f framework (output convolution).</li>
+ <li>Performance of Convolution32f framework (stride > 1).</li>
+ <li>Performance of AVX-512F optimization of Gemm32fNN function (add 6x64 and 6x48 micro kernel).</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in AVX-512F optimization of function WinogradKernel3x3Block2x2SetOutput (NCHW format).</li>
+ <li>Error in SSE, AVX, AVX-512F and NEON optimizations of function SynetPoolingForwardAverage (NHWC format).</li>
+ <li>Error in AVX-512F optimization of function SynetInnerProductLayerForward.</li>
+ <li>Error in AVX, AVX2 and AVX-512F optimizations of function Gemm32fNT.</li>
+ <li>Error in function WinogradKernel3x3Block4x4SetInput (padX != padY != padW != padH).</li>
+ <li>Error in debug FLOPS annotation of Deconvolution32f framework.</li>
+ <li>MergedConvolution32f framework doesn't work with stride == 3.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+<h3 id="R085">January 3, 2020 (version 4.5.85)</h3> 
+
+<h4>Algorithms</h4>
+<h5>New features</h5>
+<ul>
+ <li>Base implementation, SSE2, AVX2, AVX-512F and NEON optimizations of function SynetUnaryOperation32fLayerForward.</li>
+ <li>Base implementation, SSE2, AVX2, AVX-512F and NEON optimizations of function SynetSoftplus32f.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel2x2Block2x2SetFilter.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel2x2Block2x2SetInput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel2x2Block2x2SetOutput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel2x2Block4x4SetFilter.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel2x2Block4x4SetInput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel2x2Block4x4SetOutput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel1x3Block1x4SetFilter.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel1x3Block1x4SetInput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel1x3Block1x4SetOutput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel1x5Block1x4SetFilter.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel1x5Block1x4SetInput.</li>
+ <li>Base implementation, SSE, AVX, AVX-512F and NEON optimizations of function WinogradKernel1x5Block1x4SetOutput.</li>
+</ul>
+<h5>Improving</h5>
+<ul>
+ <li>Performance of Convolution32f framework (NHWC format, kernel=1x1x1).</li>
+ <li>Performance of Convolution32f framework (NHWC format, kernel=2x2).</li>
+ <li>Performance of Convolution32f framework (NHWC format, kernel=1x3).</li>
+ <li>Performance of Convolution32f framework (NHWC format, kernel=1x5).</li>
+</ul>
+<h5>Renaming</h5>
+<ul>
+ <li>NeuralSigmoid to SynetSigmoid32f.</li>
+ <li>NeuralTanh to SynetTanh32f.</li>
+ <li>NeuralRelu to SynetRelu32f.</li>
+ <li>Winograd2x3SetFilter to WinogradKernel3x3Block2x2SetFilter.</li>
+ <li>Winograd2x3SetInput to WinogradKernel3x3Block2x2SetInput.</li>
+ <li>Winograd2x3SetOutput to WinogradKernel3x3Block2x2SetOutput.</li>
+ <li>Winograd3x3SetFilter to WinogradKernel3x3Block3x3SetFilter.</li>
+ <li>Winograd3x3SetInput to WinogradKernel3x3Block3x3SetInput.</li>
+ <li>Winograd3x3SetOutput to WinogradKernel3x3Block3x3SetOutput.</li>
+ <li>Winograd4x4SetFilter to WinogradKernel3x3Block4x4SetFilter.</li>
+ <li>Winograd4x4SetInput to WinogradKernel3x3Block4x4SetInput.</li>
+ <li>Winograd4x4SetOutput to WinogradKernel3x3Block4x4SetOutput.</li>
+</ul>
+<h5>Bug fixing</h5>
+<ul>
+ <li>Error in Convolution32f framework (kernel greater than input size, NHWC format).</li>
+ <li>Potential crash in ContourDetector.</li>
+</ul>
+
+<h4>Test framework</h4>
+<h5>New features</h5>
+<ul>
+ <li>Tests for verifying functionality of function SynetUnaryOperation32fLayerForward.</li>
+ <li>Tests for verifying functionality of function SynetSoftplus32f.</li>
+ <li>Tests for verifying functionality of function WinogradKernel2x2Block2x2SetFilter.</li>
+ <li>Tests for verifying functionality of function WinogradKernel2x2Block2x2SetInput.</li>
+ <li>Tests for verifying functionality of function WinogradKernel2x2Block2x2SetOutput.</li>
+ <li>Tests for verifying functionality of function WinogradKernel2x2Block4x4SetFilter.</li>
+ <li>Tests for verifying functionality of function WinogradKernel2x2Block4x4SetInput.</li>
+ <li>Tests for verifying functionality of function WinogradKernel2x2Block4x4SetOutput.</li>
+ <li>Tests for verifying functionality of function WinogradKernel1x3Block1x4SetFilter.</li>
+ <li>Tests for verifying functionality of function WinogradKernel1x3Block1x4SetInput.</li>
+ <li>Tests for verifying functionality of function WinogradKernel1x3Block1x4SetOutput.</li>
+ <li>Tests for verifying functionality of function WinogradKernel1x5Block1x4SetFilter.</li>
+ <li>Tests for verifying functionality of function WinogradKernel1x5Block1x4SetInput.</li>
+ <li>Tests for verifying functionality of function WinogradKernel1x5Block1x4SetOutput.</li>
+</ul>
+
+<a href="#HOME">Home</a> 
+<hr/> 
+
+<center>
+ <a href="2022.html">2022</a> |
+ <a href="2021.html">2021</a> |
+ <a href="2020.html">2020</a> |
+ <a href="2019.html">2019</a> |
+ <a href="2018.html">2018</a> |
+ <a href="2017.html">2017</a> |
+ <a href="2016.html">2016</a> |
+ <a href="2015.html">2015</a> |
+ <a href="2014.html">2014</a> |
+ <a href="2013.html">2013</a>
+</center>
+
+<hr/> 
+
+</td> </tr> </table> </center> </body> </html>
